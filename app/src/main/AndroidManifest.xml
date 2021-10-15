@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RateMyCourse">
         <activity
+            android:name=".SchoolSearch"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
