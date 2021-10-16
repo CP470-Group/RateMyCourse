@@ -5,4 +5,7 @@
     <string name="homePageEditProfile">Edit profile</string>
     <string name="homePageAddRating">Add rating here</string>
     <string name="homePageLogout">Logout</string>
+    <string name="courseSearchStartText">Enter course code</string>
+    <string name="writeNewReview">Write a New Review</string>
+    <string name="viewReviews">View Reviews</string>
 </resources>
