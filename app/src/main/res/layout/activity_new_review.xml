@@ -6,4 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".new_review">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/gray"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/review_title"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:text="@string/Fillout_review"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/Proff_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:text="@string/Proff_name" />
+
+        <EditText
+            android:id="@+id/emil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Professor Name"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/enter_comment"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/User_Review" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:hint="Your Comments here" />
+
+        <Button
+            android:id="@+id/Submit_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_red_dark"
+            android:text="@string/Create_new_review" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Muntake/AndroidStudioProjects/RateMyCourse/app/src/main/res/layout/activity_course_landing.xml" value="0.25679347826086957" />
+        <entry key="..\:/Users/Muntake/AndroidStudioProjects/RateMyCourse/app/src/main/res/layout/activity_course_landing.xml" value="0.25" />
+        <entry key="..\:/Users/Muntake/AndroidStudioProjects/RateMyCourse/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Muntake/AndroidStudioProjects/RateMyCourse/app/src/main/res/layout/activity_new_review.xml" value="0.33" />
       </map>
     </option>
   </component>

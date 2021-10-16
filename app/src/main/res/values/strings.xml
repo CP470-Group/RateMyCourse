@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">RateMyCourse</string>
     <string name="Create_new_review">Create New Review</string>
+    <string name="Course_title">CourseCode-CourseName Reviews </string>
+    <string name="Reviews">Reviews From Students </string>
+    <string name="Fillout_review">Fill out below to add a review </string>
+    <string name="Proff_name">Enter your Professor</string>
+    <string name="User_Review">Enter your Comments Below </string>
+
 </resources>

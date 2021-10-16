@@ -13,10 +13,10 @@
             android:name=".new_review"
             android:exported="true" />
         <activity
-            android:name=".Course_landing"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Course_landing"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
