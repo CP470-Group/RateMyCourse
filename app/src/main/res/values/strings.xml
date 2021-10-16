@@ -5,4 +5,9 @@
     <string name="homePageEditProfile">Edit profile</string>
     <string name="homePageAddRating">Add rating here</string>
     <string name="homePageLogout">Logout</string>
+    <string name="rate_number">12</string>
+    <string name="rate">Course Ratings</string>
+    <string name="review_number">2</string>
+    <string name="review">Ratings Endorsed</string>
+    <string name="update">Update Profile</string>
 </resources>
