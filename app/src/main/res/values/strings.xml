@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RateMyCourse</string>
+    <string name="loginBtn">Login</string>
+    <string name="registerBtn">Sign Up</string>
+    <string name="logoText">RateMyCourse</string>
+    <string name="loginText">Email</string>
+    <string name="passwordText">Password</string>
+    <string name="loginBtnText">Login</string>
+    <string name="nameText">Full Name</string>
+    <string name="signUpBtnText">Sign Up</string>
 </resources>
