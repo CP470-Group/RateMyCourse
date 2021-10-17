@@ -11,6 +11,8 @@ public class HomePage extends AppCompatActivity {
 
     //Class variables
     Button schoolSearch;
+    Button profileButton;
+    Button reviewButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +21,30 @@ public class HomePage extends AppCompatActivity {
 
         //find buttons by id
         schoolSearch = findViewById(R.id.searchSchoolButton);
+        profileButton = findViewById(R.id.editProfileButton);
+        reviewButton = findViewById(R.id.addRatingButton);
 
         schoolSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(HomePage.this, SchoolSearch.class);
                 startActivityForResult(intent,10);
+            }
+        });
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, UserProfile.class);
+                startActivityForResult(intent, 10);
+            }
+        });
+
+        reviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, new_review.class);
+                startActivityForResult(intent, 10);
             }
         });
     }
