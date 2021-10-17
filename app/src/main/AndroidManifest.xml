@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RateMyCourse">
         <activity
+            android:name=".new_review"
+            android:exported="true" />
+        <activity
+            android:name=".Course_landing"
+            android:exported="true"/>
+        <activity
             android:name=".ClassSearch"
             android:exported="true" />
         <activity
