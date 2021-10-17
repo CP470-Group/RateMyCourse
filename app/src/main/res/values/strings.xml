@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">RateMyCourse</string>
+    <string name="Create_new_review">Create New Review</string>
+    <string name="Course_title">CourseCode-CourseName Reviews </string>
+    <string name="Reviews">Reviews From Students </string>
+    <string name="Fillout_review">Fill out below to add a review </string>
+    <string name="Proff_name">Enter your Professor</string>
+    <string name="User_Review">Enter your Comments Below </string>
     <string name="schoolSearchStartText">Enter school name here</string>
     <string name="homePageSearchSchool">Search School</string>
     <string name="homePageEditProfile">Edit profile</string>
@@ -10,4 +16,11 @@
     <string name="review_number">2</string>
     <string name="review">Ratings Endorsed</string>
     <string name="update">Update Profile</string>
+    <string name="courseSearchStartText">Enter course code</string>
+    <string name="writeNewReview">Write a New Review</string>
+    <string name="viewReviews">View Reviews</string>
+
+
+
+
 </resources>
