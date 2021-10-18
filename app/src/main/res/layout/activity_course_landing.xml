@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Course_landing">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/course_page_title"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_margin="20dp"
+            android:text="@string/Course_title"
+            android:background="@color/gray"
+            android:textSize="30dp"
+            android:textStyle="bold"
+
+
+            />
+
+        <Button
+            android:id="@+id/newRev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@android:color/holo_red_dark"
+            android:text="@string/Create_new_review" />
+
+        <TextView
+            android:id="@+id/student_reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Reviews"
+            android:textColor="@color/black"
+            android:layout_margin="20dp"
+            android:textSize="30dp" />
+
+        <ScrollView
+            android:id="@+id/SCROLLER_ID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:fillViewport="true">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/scroll"
+                android:text="Name: Muntake
+                \nProfessor: Dr.Yunis
+                \n  Took it with literally no experience. Got an A- in the course overall. It requires work but like it’s possible to do well. The breakdown for me at least was a weekly lab, weekly assignments, a midterm and an exam.
+
+I can’t speak for online but in person, the TAs I found were really helpful as well as working with other people I met in the class. They also had resources too for people who needed coding help I went too. Honestly the midterm and exams were kinda bs and I don’t think I got above a 70 on either of them but I aced all the labs and assignments.\n
+"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
