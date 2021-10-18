@@ -11,8 +11,8 @@
         android:theme="@style/Theme.RateMyCourse">
         <activity
 
-            android:name=".RegisterActivity"
-
+            android:name=".RegisterActivity"/>
+        <activity
             android:name=".UserProfile"
             android:exported="true" />
         <activity
@@ -27,9 +27,9 @@
         <activity
             android:name=".SchoolSearch"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="true" />-->
         <activity
             android:name=".HomePage"
 
