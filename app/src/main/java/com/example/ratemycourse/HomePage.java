@@ -13,6 +13,7 @@ public class HomePage extends AppCompatActivity {
     Button schoolSearch;
     Button profileButton;
     Button reviewButton;
+    Button databaseSample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class HomePage extends AppCompatActivity {
         schoolSearch = findViewById(R.id.searchSchoolButton);
         profileButton = findViewById(R.id.editProfileButton);
         reviewButton = findViewById(R.id.addRatingButton);
+        databaseSample = findViewById(R.id.databaseSample);
 
         schoolSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +46,14 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomePage.this, new_review.class);
+                startActivityForResult(intent, 10);
+            }
+        });
+
+        databaseSample.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomePage.this, DatabaseSample.class);
                 startActivityForResult(intent, 10);
             }
         });
