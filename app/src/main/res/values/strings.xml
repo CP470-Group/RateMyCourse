@@ -6,6 +6,8 @@
     <string name="logoText">RateMyCourse</string>
     <string name="loginText">Email</string>
     <string name="passwordText">Password</string>
+    <string name="majorText">Major</string>
+    <string name="usernameText">Username</string>
     <string name="loginBtnText">Login</string>
     <string name="nameText">Full Name</string>
     <string name="signUpBtnText">Sign Up</string>
