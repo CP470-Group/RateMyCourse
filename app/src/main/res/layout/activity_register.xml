@@ -4,12 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    android:background="@drawable/back_round">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/back_round">
+
         <TextView
+            android:background="@drawable/button_color"
             android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -17,7 +23,7 @@
             android:fontFamily="sans-serif-black"
             android:gravity="center"
             android:text="@string/logoText"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="50sp"
             android:typeface="sans"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,12 +37,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:text="@string/nameText"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
+                android:textColor="@color/white"
                 android:id="@+id/fullNameField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,17 +57,20 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/userNameTitleForReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:text="@string/usernameText"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
+                android:textColor="@color/white"
                 android:id="@+id/userNameField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,6 +82,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:id="@+id/emailTitleForReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,6 +96,7 @@
                 />
 
             <EditText
+                android:textColor="@color/white"
                 android:id="@+id/emailField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,6 +108,8 @@
                 app:layout_constraintTop_toTopOf="@id/passwordTitleForReg" />
 
             <TextView
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:id="@+id/majorTitleForReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,6 +119,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/majorField" />
 
             <EditText
+
+                android:textColor="@color/white"
                 android:id="@+id/majorField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -113,6 +132,8 @@
                 app:layout_constraintTop_toTopOf="@id/passwordTitleForReg" />
 
             <TextView
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:id="@+id/passwordTitleForReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -122,6 +143,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/passwordField" />
 
             <EditText
+                android:textColor="@color/white"
                 android:id="@+id/passwordField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

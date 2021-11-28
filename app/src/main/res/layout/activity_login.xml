@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/back_round">
 
     <TextView
         android:id="@+id/logo"
@@ -15,7 +16,8 @@
         android:gravity="center"
         android:fontFamily="sans-serif-black"
         android:text="@string/logoText"
-        android:textColor="@color/black"
+        android:background="@drawable/button_color"
+        android:textColor="@color/white"
         android:textSize="50sp"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="@string/loginText"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         android:text="@string/passwordText"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginField" />
 
@@ -65,6 +69,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:textStyle="bold"
         android:id="@+id/loginPageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

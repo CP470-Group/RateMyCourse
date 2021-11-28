@@ -4,29 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".new_review">
+    tools:context=".new_review"
+    android:background="@drawable/back_round">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/gray"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:background="@drawable/button_color"
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/logoText"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/review_title"
             android:layout_width="match_parent"
             android:layout_height="43dp"
             android:text="@string/Fillout_review"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/Proff_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:text="@string/Proff_name" />
 
@@ -35,21 +54,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Professor Name"
-            android:textColor="@color/black"
+            android:textColorHint="@color/white"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/enter_comment"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/User_Review" />
+            android:text="@string/User_Review"
+
+            />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="195dp"
-            android:hint="Your Comments here" />
+            android:textColorwhite="@color/white"/>
+
 
         <Button
             android:id="@+id/Submit_review"
