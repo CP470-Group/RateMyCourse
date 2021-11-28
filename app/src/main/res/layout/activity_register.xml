@@ -150,7 +150,6 @@
                 android:layout_marginBottom="0dp"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                app:layout_constraintBottom_toBottomOf="@id/passwordTitle"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
