@@ -4,16 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Course_landing">
+    tools:context=".Course_landing"
+    android:background="@drawable/back_round">
 
 
     <LinearLayout
+
+
+
+
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
+
+
+
+        <TextView
+            android:background="@drawable/button_color"
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/logoText"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:typeface="sans"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
         <TextView
             android:id="@+id/course_page_title"
@@ -21,8 +46,8 @@
             android:layout_height="39dp"
             android:layout_margin="20dp"
             android:text="@string/Course_title"
-            android:background="@color/gray"
             android:textSize="30dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
 
 
@@ -38,11 +63,13 @@
             android:text="@string/Create_new_review" />
 
         <TextView
+            android:textStyle="bold"
             android:id="@+id/student_reviews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Reviews"
-            android:textColor="@color/black"
+
+            android:textColor="@color/white"
             android:layout_margin="20dp"
             android:textSize="30dp" />
 
@@ -62,7 +89,7 @@
 
 I can’t speak for online but in person, the TAs I found were really helpful as well as working with other people I met in the class. They also had resources too for people who needed coding help I went too. Honestly the midterm and exams were kinda bs and I don’t think I got above a 70 on either of them but I aced all the labs and assignments.\n
 "
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20dp" />
 
 

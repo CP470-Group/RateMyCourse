@@ -6,6 +6,8 @@
     <string name="logoText">RateMyCourse</string>
     <string name="loginText">Email</string>
     <string name="passwordText">Password</string>
+    <string name="majorText">Major</string>
+    <string name="usernameText">Username</string>
     <string name="loginBtnText">Login</string>
     <string name="nameText">Full Name</string>
     <string name="signUpBtnText">Sign Up</string>
@@ -35,6 +37,7 @@
     <string name="school_province">Select Province</string>
     <string name="school_city">Enter City</string>
     <string-array name="provinces">
+        string.
         <item>Alberta</item>
         <item>British Columbia</item>
         <item>Manitoba</item>

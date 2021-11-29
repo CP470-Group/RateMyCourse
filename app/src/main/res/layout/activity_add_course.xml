@@ -5,7 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddCourseActivity">
+    tools:context=".AddCourseActivity"
+    android:background="@drawable/back_round">
+
+    <TextView
+        android:background="@drawable/button_color"
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/logoText"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textViewSchoolName"
@@ -15,10 +34,12 @@
         android:textAlignment="center" />
 
     <EditText
+        android:textStyle="bold"
         android:id="@+id/editTextCourseName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/course_name" />
+        android:hint="@string/course_name"
+        android:textColorHint="@color/white"/>
 
     <SeekBar
         android:id="@+id/seekBarRating"
@@ -30,30 +51,37 @@
         android:id="@+id/editTextCourseInstructor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/course_current_instructor" />
+        android:hint="@string/course_current_instructor"
+        android:textColorHint="@color/white"/>
 
     <EditText
+        android:textStyle="bold"
         android:id="@+id/editTextCourseDepartment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/course_department" />
+        android:hint="@string/course_department"
+        android:textColorHint="@color/white"/>
 
     <EditText
+        android:textStyle="bold"
         android:id="@+id/editTextCourseYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/course_year" />
+        android:hint="@string/course_year"
+        android:textColorHint="@color/white"/>
 
     <Button
         android:id="@+id/buttonAddCourse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_course" />
+        android:text="@string/add_course"/>
 
     <TextView
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/courses"
+        android:textColor="@color/white"
         android:layout_below="@id/buttonAddCourse"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>

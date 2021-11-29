@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/back_round">
+
 
     <ListView
         android:id="@+id/listOfCourses"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_above="@id/writeNewReview"
         android:layout_below="@+id/searchCourses"
-        android:layout_above="@id/writeNewReview"/>
+        android:layout_marginTop="-1dp"
+        android:layout_marginBottom="1dp" />
+
 
     <SearchView
         android:id="@+id/searchCourses"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
-        android:text="@string/courseSearchStartText"/>
+        android:text="@string/courseSearchStartText"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/writeNewReview"
