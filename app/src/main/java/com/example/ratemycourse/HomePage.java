@@ -30,15 +30,17 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(HomePage.this, SchoolSearch.class);
-                startActivityForResult(intent,10);
+                startActivity(intent);
             }
         });
 
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this, UserProfile.class);
-                startActivityForResult(intent, 10);
+                Intent intent = new Intent(HomePage.this, UserProfile.class);//
+                User user = (User)getIntent().getSerializableExtra("user");
+                intent.putExtra("user", user);
+                startActivity(intent);
             }
         });
 
@@ -46,7 +48,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomePage.this, new_review.class);
-                startActivityForResult(intent, 10);
+                startActivity(intent);
             }
         });
 
@@ -54,7 +56,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomePage.this, DatabaseSample.class);
-                startActivityForResult(intent, 10);
+                startActivity(intent);
             }
         });
     }

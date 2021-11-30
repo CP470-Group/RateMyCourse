@@ -70,7 +70,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="195dp"
-            android:textColorwhite="@color/white"/>
+            android:textColor="@color/white"/>
 
 
         <Button
