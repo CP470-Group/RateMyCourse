@@ -11,6 +11,7 @@
     <string name="usernameText">Username</string>
     <string name="loginBtnText">Login</string>
     <string name="nameText">Be More Specific</string>
+    <string name="nameText2">Full Name</string>
     <string name="signUpBtnText">Sign Up</string>
     <string name="Create_new_review">Create New Review</string>
     <string name="Course_title">course</string>
