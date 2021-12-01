@@ -45,7 +45,7 @@ public class HomePage extends AppCompatActivity {
         reviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this, new_review.class);
+                Intent intent = new Intent(HomePage.this, NewRating.class);
                 startActivityForResult(intent, 10);
             }
         });

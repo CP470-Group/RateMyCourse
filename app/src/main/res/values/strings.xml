@@ -9,14 +9,15 @@
     <string name="majorText">Major</string>
     <string name="usernameText">Username</string>
     <string name="loginBtnText">Login</string>
-    <string name="nameText">Full Name</string>
+    <string name="nameText">Be More Specific</string>
     <string name="signUpBtnText">Sign Up</string>
     <string name="Create_new_review">Create New Review</string>
-    <string name="Course_title">CourseCode-CourseName Reviews </string>
-    <string name="Reviews">Reviews From Students </string>
-    <string name="Fillout_review">Fill out below to add a review </string>
-    <string name="Proff_name">Enter your Professor</string>
-    <string name="User_Review">Enter your Comments Below </string>
+    <string name="Course_title">course</string>
+    <string name="Reviews">Student Reviews</string>
+    <string name="enter_prof_name">Enter Current Professors Name</string>
+    <string name="User_Review">A Chance to Share More</string>
+    <string name="gradeGiven">Grade Received</string>
+    <string name="ratingStars">Rate the Course</string>
     <string name="schoolSearchStartText">Enter school name here</string>
     <string name="homePageSearchSchool">Search School</string>
     <string name="homePageEditProfile">Edit profile</string>
@@ -29,6 +30,7 @@
     <string name="update">Update School</string>
     <string name="courseSearchStartText">Enter course code</string>
     <string name="writeNewReview">Write a New Review</string>
+    <string name="new_rev">New Review</string>
     <string name="viewReviews">View Reviews</string>
     <string name="databaseSample">Database Sample</string>
     <string name="databaseSampleTitle">Add New School</string>
@@ -49,6 +51,24 @@
         <item>Quebec</item>
         <item>Saskatchewan</item>
     </string-array>
+    <string-array name="grades">
+        string.
+        <item>Select Grade</item>
+        <item>A+</item>
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>C-</item>
+        <item>D+</item>
+        <item>D</item>
+        <item>D-</item>
+        <item>F</item>
+        <item>N/A</item>
+    </string-array>
     <string name="school_email">Enter Email</string>
     <string name="school_phone">Enter Phone Number</string>
     <string name="school_address">Enter Address</string>
@@ -61,4 +81,5 @@
     <string name="course_year">Enter Course Year</string>
     <string name="delete">Delete School</string>
     <string name="rating">Rating: </string>
+    <string name="professor_name">Current Professor</string>
 </resources>

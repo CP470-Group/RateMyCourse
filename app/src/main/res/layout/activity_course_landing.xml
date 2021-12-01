@@ -4,33 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Course_landing"
+    tools:context=".CourseLanding"
     android:background="@drawable/back_round">
 
-
     <LinearLayout
-
-
-
-
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-
-
         <TextView
-            android:background="@drawable/button_color"
-            android:id="@+id/logo"
+            android:id="@+id/schoolName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="84dp"
             android:fontFamily="sans-serif-black"
             android:gravity="center"
-            android:text="@string/logoText"
             android:textColor="@color/white"
             android:textSize="50sp"
             android:typeface="sans"
@@ -39,19 +29,55 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
-            android:id="@+id/course_page_title"
+            android:id="@+id/courseTitle"
             android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
             android:text="@string/Course_title"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textColor="@color/white"
             android:textStyle="bold"
+            android:textAlignment="center" />
 
+        <TextView
+            android:id="@+id/courseRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Course_title"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center" />
 
-            />
+        <TextView
+            android:id="@+id/courseInstructor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Course_title"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/courseDept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Course_title"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/courseYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Course_title"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/newRev"
@@ -68,9 +94,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Reviews"
-
             android:textColor="@color/white"
             android:layout_margin="20dp"
+            android:textAlignment="center"
             android:textSize="30dp" />
 
         <ScrollView
@@ -79,23 +105,16 @@
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
             android:fillViewport="true">
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/scroll"
-                android:text="Name: Muntake
-                \nProfessor: Dr.Yunis
-                \n  Took it with literally no experience. Got an A- in the course overall. It requires work but like it’s possible to do well. The breakdown for me at least was a weekly lab, weekly assignments, a midterm and an exam.
-
-I can’t speak for online but in person, the TAs I found were really helpful as well as working with other people I met in the class. They also had resources too for people who needed coding help I went too. Honestly the midterm and exams were kinda bs and I don’t think I got above a 70 on either of them but I aced all the labs and assignments.\n
-"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20dp" />
 
-
-
         </ScrollView>
-
 
     </LinearLayout>
 

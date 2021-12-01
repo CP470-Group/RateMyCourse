@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -24,6 +26,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddCourseActivity extends AppCompatActivity {
+
+    public static final String COURSE_ID = "courseID";
+    public static final String COURSE_NAME = "courseName";
+    public static final String COURSE_RATING = "courseRating";
+    public static final String COURSE_INSTRUCTOR = "currentInstructor";
+    public static final String COURSE_DEPT = "courseDepartment";
+    public static final String COURSE_YEAR = "courseYear";
+    public static final String SCHOOL_NAME = "schoolName";
 
     TextView textViewSchoolName;
     EditText editTextCourseName;
@@ -67,6 +77,22 @@ public class AddCourseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 saveCourse();
+            }
+        });
+
+        listViewCourses.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Course course = courseList.get(i);
+                Intent intent = new Intent(getApplicationContext(), CourseLanding.class);
+                intent.putExtra(COURSE_ID, course.getCourseID());
+                intent.putExtra(COURSE_NAME, course.getCourseName());
+                intent.putExtra(COURSE_RATING, course.getCourseRating());
+                intent.putExtra(COURSE_INSTRUCTOR, course.getCurrentInstructor());
+                intent.putExtra(COURSE_DEPT, course.getCourseDepartment());
+                intent.putExtra(COURSE_YEAR, course.getCourseYear());
+                intent.putExtra(SCHOOL_NAME, name);
+                startActivity(intent);
             }
         });
     }

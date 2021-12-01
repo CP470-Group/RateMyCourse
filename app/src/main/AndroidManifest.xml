@@ -20,13 +20,13 @@
             android:name=".UserProfile"
             android:exported="true" />
         <activity
-            android:name=".new_review"
+            android:name=".NewRating"
             android:exported="true" />
         <activity
             android:name=".AddCourseActivity"
             android:exported="true" />
         <activity
-            android:name=".Course_landing"
+            android:name=".CourseLanding"
             android:exported="true" />
         <activity
             android:name=".ClassSearch"
