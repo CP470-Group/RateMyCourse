@@ -2,7 +2,7 @@ package com.example.ratemycourse;
 
 public class Rating {
 
-    private String ratingID;
+    private String courseID;
     private int rating;
     private String gradeReceived;
     private String currentProf;
@@ -13,15 +13,15 @@ public class Rating {
     }
 
     public Rating(String ratingID, int rating, String gradeReceived, String currentProf, String ratingText) {
-        this.ratingID = ratingID;
+        this.courseID = ratingID;
         this.rating = rating;
         this.gradeReceived = gradeReceived;
         this.currentProf = currentProf;
         this.ratingText = ratingText;
     }
 
-    public String getRatingID() {
-        return ratingID;
+    public String getCourseID() {
+        return courseID;
     }
 
     public int getRating() {

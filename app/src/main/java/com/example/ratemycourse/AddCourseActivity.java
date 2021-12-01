@@ -87,7 +87,7 @@ public class AddCourseActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), CourseLanding.class);
                 intent.putExtra(COURSE_ID, course.getCourseID());
                 intent.putExtra(COURSE_NAME, course.getCourseName());
-                intent.putExtra(COURSE_RATING, course.getCourseRating());
+                intent.putExtra(COURSE_RATING, Integer.toString(course.getCourseRating()));
                 intent.putExtra(COURSE_INSTRUCTOR, course.getCurrentInstructor());
                 intent.putExtra(COURSE_DEPT, course.getCourseDepartment());
                 intent.putExtra(COURSE_YEAR, course.getCourseYear());
