@@ -4,35 +4,111 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/prof"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <RatingBar
-        android:id="@+id/rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="TextView" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/professor_name2"
+            android:textSize="10dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/grade"
+        <TextView
+            android:id="@+id/prof"
+            android:layout_gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="TextView" />
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/rating"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rating"
+            android:textSize="10dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <RatingBar
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                android:textColor="@color/white"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="TextView" />
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gradeGiven"
+            android:textSize="10dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/grade"
+            android:layout_gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ratingText"
+            android:textSize="10dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:layout_weight="0.5"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
 
 </LinearLayout>

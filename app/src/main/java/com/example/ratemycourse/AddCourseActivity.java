@@ -40,13 +40,15 @@ public class AddCourseActivity extends AppCompatActivity {
     EditText editTextCourseInstructor;
     EditText editTextCourseDepartment;
     EditText editTextCourseYear;
-    SeekBar seekbarRating;
     Button buttonAddCourse;
 
     ListView listViewCourses;
     List<Course> courseList;
 
     DatabaseReference databaseCourses;
+
+    // default rating for courses
+    private int rating = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,6 @@ public class AddCourseActivity extends AppCompatActivity {
         editTextCourseInstructor = (EditText) findViewById(R.id.editTextCourseInstructor);
         editTextCourseDepartment = (EditText) findViewById(R.id.editTextCourseDepartment);
         editTextCourseYear = (EditText) findViewById(R.id.editTextCourseYear);
-        seekbarRating = (SeekBar) findViewById(R.id.seekBarRating);
         buttonAddCourse = (Button) findViewById(R.id.buttonAddCourse);
 
         listViewCourses = (ListView) findViewById(R.id.listViewCourses);
@@ -121,7 +122,6 @@ public class AddCourseActivity extends AppCompatActivity {
 
     private void saveCourse() {
         String courseName = editTextCourseName.getText().toString().trim();
-        int rating = seekbarRating.getProgress();
         String currentInstructor = editTextCourseInstructor.getText().toString().trim();
         String department = editTextCourseDepartment.getText().toString().trim();
         String year = editTextCourseYear.getText().toString().trim();

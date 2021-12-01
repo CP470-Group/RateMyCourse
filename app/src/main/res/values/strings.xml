@@ -81,5 +81,7 @@
     <string name="course_year">Enter Course Year</string>
     <string name="delete">Delete School</string>
     <string name="rating">Rating: </string>
+    <string name="ratingText">Further Comments: </string>
     <string name="professor_name">Current Professor</string>
+    <string name="professor_name2">Current Professor: </string>
 </resources>

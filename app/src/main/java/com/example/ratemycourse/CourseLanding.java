@@ -40,6 +40,8 @@ public class CourseLanding extends AppCompatActivity {
     private ListView listReviews;
     private List<Rating> ratings;
 
+    private String courseID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +60,7 @@ public class CourseLanding extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String id = intent.getStringExtra(AddCourseActivity.COURSE_ID);
+        courseID = intent.getStringExtra(AddCourseActivity.COURSE_ID);
         String name = intent.getStringExtra(AddCourseActivity.COURSE_NAME);
         String rating = intent.getStringExtra(AddCourseActivity.COURSE_RATING);
         String prof = intent.getStringExtra(AddCourseActivity.COURSE_INSTRUCTOR);
@@ -83,7 +85,7 @@ public class CourseLanding extends AppCompatActivity {
                 Intent intent = new Intent(CourseLanding.this, NewRating.class);
                 intent.putExtra(COURSE_NAME_RATING, name);
                 intent.putExtra(SCHOOL_NAME_RATING, school);
-                intent.putExtra(COURSE_ID, id);
+                intent.putExtra(COURSE_ID, courseID);
                 startActivity(intent);
             }
         });
@@ -99,7 +101,11 @@ public class CourseLanding extends AppCompatActivity {
                 ratings.clear();
                 for (DataSnapshot ratingSnapshot: dataSnapshot.getChildren()) {
                     Rating rating = ratingSnapshot.getValue(Rating.class);
-                    ratings.add(rating);
+                    String x = rating.getCourseID();
+                    String y = courseID;
+                    if (rating.getCourseID().equals(courseID)) {
+                        ratings.add(rating);
+                    }
                 }
                 RatingList adapter = new RatingList(CourseLanding.this, ratings);
                 listReviews.setAdapter(adapter);
