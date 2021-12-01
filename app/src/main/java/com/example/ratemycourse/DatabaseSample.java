@@ -130,6 +130,9 @@ public class DatabaseSample extends AppCompatActivity {
             String id = databaseSchools.push().getKey();
             School school = new School(id, name, province, city, email, address, phone, postalCode);
             databaseSchools.child(id).setValue(school);
+
+
+
             Toast.makeText(this, "School added.", Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this, "Please enter name.", Toast.LENGTH_LONG).show();
