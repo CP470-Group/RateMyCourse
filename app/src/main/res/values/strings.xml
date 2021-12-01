@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">RateMyCourse</string>
-
+    <string name="updateProfileButton">Update Profile</string>
+    <string name="deleteProfileButton">Delete Profile</string>
     <string name="loginBtn">Login</string>
     <string name="registerBtn">Sign Up</string>
     <string name="logoText">RateMyCourse</string>

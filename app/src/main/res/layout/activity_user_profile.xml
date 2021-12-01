@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/back_round">
         <TextView
@@ -37,35 +37,35 @@
             android:background="@drawable/back_round">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_picture"
+                android:id="@+id/profilePicture"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/profile_round" />
+                android:src="@drawable/blank_pic" />
 
             <TextView
-                android:id="@+id/user_full_name"
+                android:id="@+id/userFullNameTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/profile_picture"
+                android:layout_toRightOf="@+id/profilePicture"
                 android:fontFamily="@font/comfortaa"
                 android:includeFontPadding="false"
-                android:text="John Doe"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/user_name"
+                android:id="@+id/userNameTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/user_full_name"
+                android:layout_below="@id/userFullNameTitle"
                 android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/profile_picture"
+                android:layout_toRightOf="@+id/profilePicture"
                 android:fontFamily="@font/coda"
                 android:includeFontPadding="false"
-                android:text="john_doe55"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -98,21 +98,21 @@
                         android:src="@drawable/rate" />
 
                     <TextView
-                        android:id="@+id/review_label"
+                        android:id="@+id/userRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/comfortaa"
                         android:includeFontPadding="false"
-                        android:text="@string/rate_number"
+                        android:text=""
                         android:textSize="20dp"
                         android:textColor="@color/white"/>
 
                     <TextView
-                        android:id="@+id/review_desc"
+                        android:id="@+id/userRatingLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/review_label"
+                        android:layout_below="@id/userRating"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/coda"
                         android:includeFontPadding="false"
@@ -144,21 +144,21 @@
                         android:src="@drawable/thumbs_up" />
 
                     <TextView
-                        android:id="@+id/other_label"
+                        android:id="@+id/numberOfEndorsements"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:fontFamily="@font/comfortaa"
                         android:includeFontPadding="false"
-                        android:text="@string/review_number"
+                        android:text=""
                         android:textSize="20dp"
                         android:textColor="@color/white"/>
 
                     <TextView
-                        android:id="@+id/other_desc"
+                        android:id="@+id/ratingsEndorsedLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/other_label"
+                        android:layout_below="@id/numberOfEndorsements"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/coda"
                         android:includeFontPadding="false"
@@ -186,11 +186,12 @@
                 android:hint="Full Name">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fullNameFieldProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/user"
                     android:drawablePadding="10dp"
-                    android:text="Johnathan Doe" />
+                    android:text="" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -200,11 +201,12 @@
                 android:hint="Email">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailFieldProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/email"
                     android:drawablePadding="10dp"
-                    android:text="johndoe@gmail.com" />
+                    android:text="" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -214,11 +216,12 @@
                 android:hint="Major">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/majorFieldProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/school"
                     android:drawablePadding="10dp"
-                    android:text="Computer Science" />
+                    android:text="" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -228,22 +231,33 @@
                 android:hint="Interests">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/interestsFieldProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/bike"
                     android:drawablePadding="10dp"
-                    android:text="Biking, Swimming, Hiking, etc." />
+                    android:text="" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/update_button"
+                android:id="@+id/updateProfileButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#8233f2"
                 android:textColor="@color/white"
                 android:fontFamily="@font/comfortaa"
-                android:text="@string/update"
+                android:text="@string/updateProfileButton"
+                android:layout_marginTop="15dp"/>
+
+            <Button
+                android:id="@+id/deleteProfileButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8233f2"
+                android:textColor="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:text="@string/deleteProfileButton"
                 android:layout_marginTop="15dp"/>
 
         </LinearLayout>
