@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -101,8 +102,6 @@ public class CourseLanding extends AppCompatActivity {
                 ratings.clear();
                 for (DataSnapshot ratingSnapshot: dataSnapshot.getChildren()) {
                     Rating rating = ratingSnapshot.getValue(Rating.class);
-                    String x = rating.getCourseID();
-                    String y = courseID;
                     if (rating.getCourseID().equals(courseID)) {
                         ratings.add(rating);
                     }

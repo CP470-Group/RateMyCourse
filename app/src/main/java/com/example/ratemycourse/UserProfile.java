@@ -3,6 +3,7 @@ package com.example.ratemycourse;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class UserProfile extends AppCompatActivity {
@@ -25,6 +27,10 @@ public class UserProfile extends AppCompatActivity {
     TextInputEditText interestsField;
     Button updateProfileButton;
     Button deleteProfileButton;
+
+    private CircleImageView imageView;
+    private Uri filePath;
+    private final int PICK_IMAGE_REQUEST = 22;
 
     DatabaseReference databaseUsers;
     User user;
@@ -45,14 +51,16 @@ public class UserProfile extends AppCompatActivity {
         if(!hasUserBeenUpdated){
             user = (User)getIntent().getSerializableExtra("user");
         }
+
         String fullNameText = user.getUserFullName();
         String userNameText = user.getUsername();
-        String userRatingText = String.valueOf(user.getUserRating());
+        String numberOfRatings = String.valueOf(user.getUserNumberOfReviews());
         String numberOfEndorsementsText = String.valueOf(user.getUserNumberOfEndorsements());
         String emailText = user.getEmail();
         String majorText = user.getUserMajor();
         String interestsText = user.getInterests();
 
+        imageView = findViewById(R.id.profilePicture);
 
         fullName = findViewById(R.id.userFullNameTitle);
         username = findViewById(R.id.userNameTitle);
@@ -68,7 +76,7 @@ public class UserProfile extends AppCompatActivity {
         //Populating all of the information onto the layout
         fullName.setText(fullNameText);
         username.setText(userNameText);
-        userRating.setText(userRatingText);
+        userRating.setText(numberOfRatings);
         numberOfEndorsements.setText(numberOfEndorsementsText);
         fullNameField.setText(fullNameText);
         emailField.setText(emailText);
@@ -124,6 +132,4 @@ public class UserProfile extends AppCompatActivity {
         deleteUser.removeValue();
         Toast.makeText(this, "User is deleted", Toast.LENGTH_LONG).show();
     }
-
-
 }

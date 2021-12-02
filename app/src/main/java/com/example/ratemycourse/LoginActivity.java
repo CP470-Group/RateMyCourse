@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -50,6 +52,22 @@ public class LoginActivity extends AppCompatActivity {
                 boolean loginValid = checkForValidLogin(email, password);
                 if (loginValid){
                     User user = searchForUser(email);
+
+                    // store user data in shared preferences
+                    SharedPreferences sp = getSharedPreferences("login", MODE_PRIVATE);
+                    SharedPreferences.Editor ed = sp.edit();
+                    ed.putString("username", user.username);
+                    ed.putInt("reviewNum", user.userNumberOfReviews);
+                    ed.apply();
+
+                    // store user in shared preferences as JSON
+                    SharedPreferences mPrefs = getPreferences(MODE_PRIVATE);
+                    SharedPreferences.Editor prefsEditor = mPrefs.edit();
+                    Gson gson = new Gson();
+                    String json = gson.toJson(user);
+                    prefsEditor.putString("user", json);
+                    prefsEditor.commit();
+
                     Intent intent = new Intent(LoginActivity.this, HomePage.class);
                     intent.putExtra("user", user);
                     startActivity(intent);
@@ -82,7 +100,6 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
     }
-
 
     private boolean checkForValidLogin(String email, String password) {
         boolean validLogin = false;

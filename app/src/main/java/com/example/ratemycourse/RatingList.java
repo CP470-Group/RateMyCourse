@@ -35,6 +35,7 @@ public class RatingList extends ArrayAdapter<Rating> {
         RatingBar rate = (RatingBar) listViewItem.findViewById(R.id.rate);
         TextView grade = (TextView) listViewItem.findViewById(R.id.grade);
         TextView ratingText = (TextView) listViewItem.findViewById(R.id.rating);
+        TextView username = (TextView) listViewItem.findViewById(R.id.username);
 
         Rating rating = ratingList.get(position);
 
@@ -42,6 +43,10 @@ public class RatingList extends ArrayAdapter<Rating> {
         rate.setRating(rating.getRating());
         grade.setText(rating.getGradeReceived());
         ratingText.setText(rating.getRatingText());
+
+        String user = context.getString(R.string.user);
+
+        username.setText(user + " " + rating.getUsername());
 
         return listViewItem;
     }

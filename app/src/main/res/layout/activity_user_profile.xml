@@ -112,8 +112,8 @@
                         android:fontFamily="@font/coda"
                         android:includeFontPadding="false"
                         android:text="@string/rate"
-                        android:textSize="14dp"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
 
                 </RelativeLayout>
 
