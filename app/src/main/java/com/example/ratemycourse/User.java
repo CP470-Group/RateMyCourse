@@ -2,27 +2,37 @@ package com.example.ratemycourse;
 
 import android.media.Image;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+    String id;
     String username;
     String email;
     String userFullName;
     String userMajor;
+    String password;
     float userRating;
     int userNumberOfReviews;
     int userNumberOfEndorsements;
     Image userProfilePicture;
-    //MAYBE MAKE THESE OPTIONAL DISCUSS AT SOME POINT
     String interests;
 
-    public User(String username, String email, String userFullName, String userMajor, float userRating, int userNumberOfReviews, int userNumberOfEndorsements, Image userProfilePicture){
+    public User(){
+
+    }
+
+    public User(String id, String username, String email, String userFullName, String userMajor, String password, float userRating, int userNumberOfReviews, int userNumberOfEndorsements, Image userProfilePicture, String interests){
+        this.id = id;
         this.username = username;
         this.email = email;
         this.userFullName = userFullName;
         this.userMajor = userMajor;
+        this.password = password;
         this.userRating = userRating;
         this.userNumberOfReviews = userNumberOfReviews;
         this.userNumberOfEndorsements = userNumberOfEndorsements;
         this.userProfilePicture = userProfilePicture;
+        this.interests = interests;
     }
 
     public String getUsername() {
@@ -95,6 +105,22 @@ public class User {
 
     public void setInterests(String interests) {
         this.interests = interests;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 }
