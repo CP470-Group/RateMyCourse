@@ -4,48 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_round"
     tools:context=".HomePage">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="-39dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="RateMyCourse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="45dp"/>
 
-        <Button
-            android:id="@+id/searchSchoolButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/homePageSearchSchool" />
 
-        <Button
-            android:id="@+id/addRatingButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/homePageAddRating" />
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical"-->
+    <!--        tools:layout_editor_absoluteX="-39dp"-->
+    <!--        tools:layout_editor_absoluteY="16dp">-->
 
-        <Button
-            android:id="@+id/editProfileButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/homePageEditProfile" />
+    <!--        <Button-->
+    <!--            android:id="@+id/searchSchoolButton"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/homePageSearchSchool" />-->
 
-        <Button
-            android:id="@+id/logoutButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/homePageLogout" />
+    <!--        <Button-->
+    <!--            android:id="@+id/addRatingButton"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/homePageAddRating" />-->
 
-        <Button
-            android:id="@+id/databaseSample"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/databaseSample" />
-    </LinearLayout>
+    <!--        <Button-->
+    <!--            android:id="@+id/editProfileButton"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/homePageEditProfile" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/logoutButton"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/homePageLogout" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/databaseSample"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:text="@string/databaseSample" />-->
+    <!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
