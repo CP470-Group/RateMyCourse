@@ -8,12 +8,12 @@
     android:background="@drawable/back_round">
 
     <Button
+        android:background="@drawable/roundbutton"
         android:textStyle="bold"
         android:id="@+id/registerButton"
         android:layout_width="231dp"
         android:layout_height="45dp"
         android:layout_marginBottom="89dp"
-        android:background="@drawable/button_color"
         android:text="@string/registerBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,12 +22,12 @@
 
     <Button
         android:textStyle="bold"
-
+        android:background="@drawable/roundbutton"
         android:id="@+id/loginButton"
         android:layout_width="231dp"
         android:layout_height="0dp"
         android:layout_marginBottom="176dp"
-        android:background="@drawable/button_color"
+
         android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

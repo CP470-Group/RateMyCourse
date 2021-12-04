@@ -106,12 +106,12 @@
                             android:textColor="@color/white" />
 
                         <Button
+                            android:background="@drawable/roundbutton"
                             android:id="@+id/submitRating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_margin="20dp"
-                            android:background="@android:color/holo_red_dark"
                             android:text="@string/Create_new_review" />
 
                 </LinearLayout>
