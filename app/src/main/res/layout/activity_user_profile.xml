@@ -39,6 +39,7 @@
                 android:layout_height="100dp"
                 android:src="@drawable/blank_pic" />
 
+
             <TextView
                 android:id="@+id/userFullNameTitle"
                 android:layout_width="wrap_content"

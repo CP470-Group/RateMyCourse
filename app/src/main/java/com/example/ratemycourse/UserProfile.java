@@ -3,11 +3,15 @@ package com.example.ratemycourse;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
@@ -94,8 +98,7 @@ public class UserProfile extends AppCompatActivity {
                 String emailUpdate = emailField.getText().toString().trim();
                 String majorUpdate = majorField.getText().toString().trim();
                 String interestsUpdate = interestsField.getText().toString().trim();
-                updateUser(user.getId(), user.getUsername(), emailUpdate, fullNameUpdate, majorUpdate, user.getPassword(), user.getUserRating(), user.getUserNumberOfReviews(), user.getUserNumberOfEndorsements(), user.getUserProfilePicture(), interestsUpdate );
-
+                updateUser(user.getId(), user.getUsername(), emailUpdate, fullNameUpdate, majorUpdate, user.getPassword(), user.getUserRating(), user.getUserNumberOfReviews(), user.getUserNumberOfEndorsements(), interestsUpdate);
             }
         });
 
@@ -109,21 +112,9 @@ public class UserProfile extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean("hasUserBeenUpdated", hasUserBeenUpdated);
-    }
-
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        hasUserBeenUpdated = savedInstanceState.getBoolean("hasUserBeenUpdated");
-    }
-
-    public boolean updateUser(String id, String username, String email, String userFullName, String userMajor, String password, float userRating, int userNumberOfReviews, int userNumberOfEndorsements, Image userProfilePicture, String interests ){
+    public boolean updateUser(String id, String username, String email, String userFullName, String userMajor, String password, float userRating, int userNumberOfReviews, int userNumberOfEndorsements, String interests ){
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users").child(id);
-        User user = new User(id, username, email , userFullName , userMajor , password, userRating, userNumberOfReviews , userNumberOfEndorsements, userProfilePicture, interests);
+        User user = new User(id, username, email , userFullName , userMajor , password, userRating, userNumberOfReviews , userNumberOfEndorsements, interests);
         databaseReference.setValue(user);
         hasUserBeenUpdated = true;
 

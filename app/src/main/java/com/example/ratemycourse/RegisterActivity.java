@@ -1,8 +1,9 @@
 package com.example.ratemycourse;
 
+//Imports
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
-
+import com.google.gson.Gson;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -44,9 +45,11 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 User user = createUser();
-                Intent intent = new Intent(RegisterActivity.this, HomePage.class);
-                intent.putExtra("user", user);
-                startActivity(intent);
+                if(user != null){
+                    Intent intent = new Intent(RegisterActivity.this, HomePage.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -58,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         String major = majorText.getText().toString().trim();
         String password = passwordText.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(fullName)){
+        if(!TextUtils.isEmpty(username) && !TextUtils.isEmpty(fullName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(major) && !TextUtils.isEmpty(password) ){
             String id = databaseUsers.push().getKey();
             User user = new User(id, username, email, fullName, major , password, 0, 0, 0, null, "");
 
