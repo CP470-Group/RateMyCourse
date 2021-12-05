@@ -50,6 +50,7 @@
                 android:textColorHint="@color/white"/>
 
             <EditText
+                android:textStyle="bold"
                 android:id="@+id/editTextCourseInstructor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,6 +58,7 @@
                 android:textColorHint="@color/white"/>
 
             <EditText
+
                 android:textStyle="bold"
                 android:id="@+id/editTextCourseDepartment"
                 android:layout_width="match_parent"
@@ -65,6 +67,7 @@
                 android:textColorHint="@color/white"/>
 
             <EditText
+
                 android:textStyle="bold"
                 android:id="@+id/editTextCourseYear"
                 android:layout_width="match_parent"
@@ -73,6 +76,7 @@
                 android:textColorHint="@color/white"/>
 
             <Button
+                android:background="@drawable/roundbutton"
                 android:id="@+id/buttonAddCourse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

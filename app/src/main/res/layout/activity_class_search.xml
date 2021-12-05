@@ -27,17 +27,21 @@
         android:textColor="@color/white" />
 
     <Button
+        android:background="@drawable/roundbutton"
         android:id="@+id/writeNewReview"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="215dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="0dp"
         android:layout_toStartOf="@id/viewReviews"
         android:text="@string/writeNewReview" />
 
     <Button
+        android:background="@drawable/roundbutton"
         android:id="@+id/viewReviews"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
