@@ -1,5 +1,6 @@
 package com.example.ratemycourse;
 
+import android.graphics.Bitmap;
 import android.media.Image;
 
 import java.io.Serializable;
@@ -14,14 +15,13 @@ public class User implements Serializable {
     float userRating;
     int userNumberOfReviews;
     int userNumberOfEndorsements;
-    Image userProfilePicture;
     String interests;
 
     public User(){
 
     }
 
-    public User(String id, String username, String email, String userFullName, String userMajor, String password, float userRating, int userNumberOfReviews, int userNumberOfEndorsements, Image userProfilePicture, String interests){
+    public User(String id, String username, String email, String userFullName, String userMajor, String password, float userRating, int userNumberOfReviews, int userNumberOfEndorsements, String interests){
         this.id = id;
         this.username = username;
         this.email = email;
@@ -31,7 +31,6 @@ public class User implements Serializable {
         this.userRating = userRating;
         this.userNumberOfReviews = userNumberOfReviews;
         this.userNumberOfEndorsements = userNumberOfEndorsements;
-        this.userProfilePicture = userProfilePicture;
         this.interests = interests;
     }
 
@@ -89,14 +88,6 @@ public class User implements Serializable {
 
     public void setUserNumberOfEndorsements(int userNumberOfEndorsements) {
         this.userNumberOfEndorsements = userNumberOfEndorsements;
-    }
-
-    public Image getUserProfilePicture() {
-        return userProfilePicture;
-    }
-
-    public void setUserProfilePicture(Image userProfilePicture) {
-        this.userProfilePicture = userProfilePicture;
     }
 
     public String getInterests() {

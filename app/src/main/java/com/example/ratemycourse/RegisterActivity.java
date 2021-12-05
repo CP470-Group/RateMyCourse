@@ -1,7 +1,7 @@
 package com.example.ratemycourse;
 
+//Imports
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -43,9 +43,11 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 User user = createUser();
-                Intent intent = new Intent(RegisterActivity.this, HomePage.class);
-                intent.putExtra("user", user);
-                startActivity(intent);
+                if(user != null){
+                    Intent intent = new Intent(RegisterActivity.this, HomePage.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -57,9 +59,9 @@ public class RegisterActivity extends AppCompatActivity {
         String major = majorText.getText().toString().trim();
         String password = passwordText.getText().toString().trim();
 
-        if(!TextUtils.isEmpty(fullName)){
+        if(!TextUtils.isEmpty(username) && !TextUtils.isEmpty(fullName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(major) && !TextUtils.isEmpty(password) ){
             String id = databaseUsers.push().getKey();
-            User user = new User(id, username, email, fullName, major , password, 0, 0, 0, null, "");
+            User user = new User(id, username, email, fullName, major , password, 0, 0, 0, "");
             databaseUsers.child(id).setValue(user);
             Toast.makeText(this, "Account Created.", Toast.LENGTH_LONG).show();
             return user;
