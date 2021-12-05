@@ -1,15 +1,24 @@
 package com.example.ratemycourse;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -29,6 +38,9 @@ public class RatingList extends ArrayAdapter<Rating> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
 
+        // to update the users endorsements
+        DatabaseReference databaseUsers = FirebaseDatabase.getInstance().getReference("users");
+
         View listViewItem = inflater.inflate(R.layout.rating_list_layout, null, true);
 
         TextView prof = (TextView) listViewItem.findViewById(R.id.prof);
@@ -36,6 +48,8 @@ public class RatingList extends ArrayAdapter<Rating> {
         TextView grade = (TextView) listViewItem.findViewById(R.id.grade);
         TextView ratingText = (TextView) listViewItem.findViewById(R.id.rating);
         TextView username = (TextView) listViewItem.findViewById(R.id.username);
+
+        ImageButton endorseButton = (ImageButton) listViewItem.findViewById(R.id.endorseButton);
 
         Rating rating = ratingList.get(position);
 
@@ -47,6 +61,21 @@ public class RatingList extends ArrayAdapter<Rating> {
         String user = context.getString(R.string.user);
 
         username.setText(user + " " + rating.getUsername());
+
+        endorseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sp = context.getSharedPreferences("userObject", Context.MODE_PRIVATE);
+                String userString = sp.getString("user", "");
+                Gson gson = new Gson();
+                User user = gson.fromJson(userString, User.class);
+                databaseUsers.child(user.id).child("userNumberOfEndorsements").setValue(user.userNumberOfEndorsements + 1);
+
+                // use snack bar to notify user endorsement was successful
+                Snackbar snackbar = Snackbar.make(listViewItem,"Rating endorsed!",Snackbar.LENGTH_SHORT);
+                snackbar.show();
+            }
+        });
 
         return listViewItem;
     }

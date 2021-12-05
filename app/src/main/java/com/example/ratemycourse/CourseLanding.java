@@ -8,13 +8,16 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -25,11 +28,15 @@ public class CourseLanding extends AppCompatActivity {
     private Button new_review;
     private TextView scroll;
     private TextView courseTitle;
-    private TextView courseRating;
+    private RatingBar courseRating;
     private TextView courseInstructor;
     private TextView courseDept;
     private TextView courseYear;
     private TextView schoolName;
+
+    // rating variables used for overall course rating
+    float overall = 0;
+    private int courseRatings;
 
     public static final String COURSE_ID = "courseID";
     public static final String COURSE_NAME_RATING = "courseNameRate";
@@ -53,7 +60,7 @@ public class CourseLanding extends AppCompatActivity {
         new_review = (Button) findViewById(R.id.newRev);
 
         courseTitle = (TextView) findViewById(R.id.courseTitle);
-        courseRating = (TextView) findViewById(R.id.courseRating);
+        courseRating = (RatingBar) findViewById(R.id.courseRating);
         courseInstructor = (TextView) findViewById(R.id.courseInstructor);
         courseDept = (TextView) findViewById(R.id.courseDept);
         courseYear = (TextView) findViewById(R.id.courseYear);
@@ -63,14 +70,12 @@ public class CourseLanding extends AppCompatActivity {
 
         courseID = intent.getStringExtra(AddCourseActivity.COURSE_ID);
         String name = intent.getStringExtra(AddCourseActivity.COURSE_NAME);
-        String rating = intent.getStringExtra(AddCourseActivity.COURSE_RATING);
         String prof = intent.getStringExtra(AddCourseActivity.COURSE_INSTRUCTOR);
         String dept = intent.getStringExtra(AddCourseActivity.COURSE_DEPT);
         String year = intent.getStringExtra(AddCourseActivity.COURSE_YEAR);
         String school = intent.getStringExtra(AddCourseActivity.SCHOOL_NAME);
 
         courseTitle.setText(name);
-        courseRating.setText(rating);
         courseInstructor.setText(prof);
         courseDept.setText(dept);
         courseYear.setText(year);
@@ -103,11 +108,16 @@ public class CourseLanding extends AppCompatActivity {
                 for (DataSnapshot ratingSnapshot: dataSnapshot.getChildren()) {
                     Rating rating = ratingSnapshot.getValue(Rating.class);
                     if (rating.getCourseID().equals(courseID)) {
+                        courseRatings += rating.getRating();
                         ratings.add(rating);
                     }
                 }
                 RatingList adapter = new RatingList(CourseLanding.this, ratings);
                 listReviews.setAdapter(adapter);
+                if (ratings.size() > 0) {
+                    overall = courseRatings / ratings.size();
+                }
+                courseRating.setRating(overall);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

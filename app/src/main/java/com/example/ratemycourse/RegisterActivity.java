@@ -3,6 +3,7 @@ package com.example.ratemycourse;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
+import com.google.gson.Gson;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -60,6 +61,15 @@ public class RegisterActivity extends AppCompatActivity {
         if(!TextUtils.isEmpty(fullName)){
             String id = databaseUsers.push().getKey();
             User user = new User(id, username, email, fullName, major , password, 0, 0, 0, null, "");
+
+            // store user in shared preferences as JSON
+            SharedPreferences mPrefs = getSharedPreferences("userObject", MODE_PRIVATE);
+            SharedPreferences.Editor prefsEditor = mPrefs.edit();
+            Gson gson = new Gson();
+            String json = gson.toJson(user);
+            prefsEditor.putString("user", json);
+            prefsEditor.apply();
+
             databaseUsers.child(id).setValue(user);
             Toast.makeText(this, "Account Created.", Toast.LENGTH_LONG).show();
             return user;

@@ -37,10 +37,7 @@ public class NewRating extends AppCompatActivity {
     private String courseID;
     private String courseName;
     private String schoolName;
-    private String username;
-    private String userid;
-    private int reviewNum;
-    private int ratingCount;
+    private String userString;
 
     // rating input fields
     private Spinner spinnerGrades;
@@ -54,6 +51,8 @@ public class NewRating extends AppCompatActivity {
 
     DatabaseReference databaseRatings;
     DatabaseReference databaseUsers;
+
+    User user;
 
     public static final String COURSE_ID = "courseID";
     public static final String COURSE_NAME = "courseNameRate";
@@ -84,10 +83,10 @@ public class NewRating extends AppCompatActivity {
         courseName = intent.getStringExtra(CourseLanding.COURSE_NAME_RATING);
         schoolName = intent.getStringExtra(CourseLanding.SCHOOL_NAME_RATING);
 
-        SharedPreferences sp = getSharedPreferences("login", MODE_PRIVATE);
-        username = sp.getString("username", "");
-        userid = sp.getString("userid", "");
-        reviewNum = sp.getInt("reviewNum", 0);
+        SharedPreferences sp = getSharedPreferences("userObject", MODE_PRIVATE);
+        userString = sp.getString("user", "");
+        Gson gson = new Gson();
+        user = gson.fromJson(userString, User.class);
 
         courseNameRate.setText(courseName);
         schoolNameRate.setText(schoolName);
@@ -114,11 +113,11 @@ public class NewRating extends AppCompatActivity {
 
         if (!TextUtils.isEmpty(grade) || !TextUtils.equals(Integer.toString(rate), "0") || !TextUtils.isEmpty(prof) || !TextUtils.isEmpty(text)) {
             String id = databaseRatings.push().getKey();
-            Rating rating = new Rating(courseID, rate, grade, prof, text, username);
+            Rating rating = new Rating(id, courseID, rate, grade, prof, text, user.username);
             databaseRatings.child(id).setValue(rating);
 
             // update user review count
-            databaseUsers.child(userid).child("userNumberOfReviews").setValue(reviewNum + 1);
+            databaseUsers.child(user.id).child("userNumberOfReviews").setValue(user.userNumberOfReviews + 1);
 
             // redirect user back to course landing page after rating is created
             Intent intent = new Intent(NewRating.this, HomePage.class);
