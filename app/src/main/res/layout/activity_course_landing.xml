@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/courseLandingPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
@@ -44,15 +45,14 @@
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
-                <TextView
+                <RatingBar
                     android:id="@+id/courseRating"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Course_title"
-                    android:textAlignment="center"
+                    android:numStars="5"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:layout_gravity="center"
+                    android:text="TextView" />
 
                 <TextView
                     android:id="@+id/courseInstructor"

@@ -29,7 +29,7 @@ public class HomePage extends AppCompatActivity {
         //find buttons by id
         schoolSearch = findViewById(R.id.searchSchoolButton);
         profileButton = findViewById(R.id.editProfileButton);
-        reviewButton = findViewById(R.id.addRatingButton);
+        //reviewButton = findViewById(R.id.addRatingButton);
         databaseSample = findViewById(R.id.databaseSample);
         bottomNav = findViewById(R.id.bottomNavigationView);
 
@@ -51,13 +51,13 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-        reviewButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this, NewRating.class);
-                startActivity(intent);
-            }
-        });
+//        reviewButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomePage.this, NewRating.class);
+//                startActivity(intent);
+//            }
+//        });
 
         databaseSample.setOnClickListener(new View.OnClickListener() {
             @Override

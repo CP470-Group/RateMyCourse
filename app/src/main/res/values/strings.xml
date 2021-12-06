@@ -9,12 +9,14 @@
     <string name="passwordText">Password</string>
     <string name="majorText">Major</string>
     <string name="usernameText">Username</string>
+    <string name="user">User: </string>
     <string name="loginBtnText">Login</string>
     <string name="nameText">Be More Specific</string>
     <string name="nameText2">Full Name</string>
     <string name="signUpBtnText">Sign Up</string>
     <string name="Create_new_review">Create New Review</string>
     <string name="Course_title">course</string>
+    <string name="endorse">Endorse Rating</string>
     <string name="Reviews">Student Reviews</string>
     <string name="enter_prof_name">Enter Current Professors Name</string>
     <string name="User_Review">A Chance to Share More</string>
@@ -39,6 +41,7 @@
     <string name="databaseSampleButton">Add School</string>
     <string name="school_name">Enter School Name</string>
     <string name="school_province">Select Province</string>
+    <string name="userOverview">Profile Overview</string>
     <string name="school_city">Enter City</string>
     <string-array name="provinces">
         string.

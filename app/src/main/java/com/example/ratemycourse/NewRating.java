@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,6 +37,7 @@ public class NewRating extends AppCompatActivity {
     private String courseID;
     private String courseName;
     private String schoolName;
+    private String userString;
 
     // rating input fields
     private Spinner spinnerGrades;
@@ -43,7 +47,12 @@ public class NewRating extends AppCompatActivity {
 
     private Button submitRating;
 
+    DataSnapshot dataSnapshot;
+
     DatabaseReference databaseRatings;
+    DatabaseReference databaseUsers;
+
+    User user;
 
     public static final String COURSE_ID = "courseID";
     public static final String COURSE_NAME = "courseNameRate";
@@ -55,6 +64,7 @@ public class NewRating extends AppCompatActivity {
         setContentView(R.layout.activity_new_review);
 
         databaseRatings = FirebaseDatabase.getInstance().getReference("ratings");
+        databaseUsers = FirebaseDatabase.getInstance().getReference("users");
 
         courseNameRate = (TextView) findViewById(R.id.courseNameRate);
         schoolNameRate = (TextView) findViewById(R.id.schoolNameRate);
@@ -72,6 +82,11 @@ public class NewRating extends AppCompatActivity {
         courseID = intent.getStringExtra(CourseLanding.COURSE_ID);
         courseName = intent.getStringExtra(CourseLanding.COURSE_NAME_RATING);
         schoolName = intent.getStringExtra(CourseLanding.SCHOOL_NAME_RATING);
+
+        SharedPreferences sp = getSharedPreferences("userObject", MODE_PRIVATE);
+        userString = sp.getString("user", "");
+        Gson gson = new Gson();
+        user = gson.fromJson(userString, User.class);
 
         courseNameRate.setText(courseName);
         schoolNameRate.setText(schoolName);
@@ -98,8 +113,11 @@ public class NewRating extends AppCompatActivity {
 
         if (!TextUtils.isEmpty(grade) || !TextUtils.equals(Integer.toString(rate), "0") || !TextUtils.isEmpty(prof) || !TextUtils.isEmpty(text)) {
             String id = databaseRatings.push().getKey();
-            Rating rating = new Rating(courseID, rate, grade, prof, text);
+            Rating rating = new Rating(id, courseID, rate, grade, prof, text, user.username);
             databaseRatings.child(id).setValue(rating);
+
+            // update user review count
+            databaseUsers.child(user.id).child("userNumberOfReviews").setValue(user.userNumberOfReviews + 1);
 
             // redirect user back to course landing page after rating is created
             Intent intent = new Intent(NewRating.this, HomePage.class);

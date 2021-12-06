@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -48,8 +50,17 @@ public class LoginActivity extends AppCompatActivity {
                 email = emailText.getText().toString().trim();
                 String password = passwordText.getText().toString().trim();
                 boolean loginValid = checkForValidLogin(email, password);
-                if (loginValid){
+                if (loginValid) {
                     User user = searchForUser(email);
+
+                    // store user in shared preferences as JSON
+                    SharedPreferences mPrefs = getSharedPreferences("userObject", MODE_PRIVATE);
+                    SharedPreferences.Editor prefsEditor = mPrefs.edit();
+                    Gson gson = new Gson();
+                    String json = gson.toJson(user);
+                    prefsEditor.putString("user", json);
+                    prefsEditor.apply();
+
                     Intent intent = new Intent(LoginActivity.this, HomePage.class);
                     intent.putExtra("user", user);
                     startActivity(intent);
@@ -61,15 +72,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
-        if(databaseUsers != null){
+        if (databaseUsers != null) {
             databaseUsers.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists()){
+                    if (dataSnapshot.exists()) {
                         usersList = new ArrayList<>();
-                        for(DataSnapshot ds : dataSnapshot.getChildren()){
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             usersList.add(ds.getValue(User.class));
                         }
                     }
@@ -83,23 +94,21 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
     private boolean checkForValidLogin(String email, String password) {
         boolean validLogin = false;
         User user = searchForUser(email);
-        if(user != null && user.password.equals(password)){
+        if (user != null && user.password.equals(password)) {
             validLogin = true;
         }
         return validLogin;
     }
 
-    private User searchForUser(String email){
-        for(User user:usersList){
-            if(user.email.equals(email)){
+    private User searchForUser(String email) {
+        for (User user : usersList) {
+            if (user.email.equals(email)) {
                 return user;
             }
         }
         return null;
     }
-
 }

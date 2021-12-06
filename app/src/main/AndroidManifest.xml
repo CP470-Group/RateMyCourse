@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RateMyCourse">
         <activity
+            android:name=".UserOverview"
+            android:exported="true" />
+        <activity
             android:name=".SearchCourse"
             android:exported="true" />
         <activity

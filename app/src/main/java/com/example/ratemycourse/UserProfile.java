@@ -2,9 +2,11 @@ package com.example.ratemycourse;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -31,8 +34,17 @@ public class UserProfile extends AppCompatActivity {
     Button updateProfileButton;
     Button deleteProfileButton;
 
-    DatabaseReference databaseUsers;
     User user;
+
+    // variables for shared preferences
+    private String userString;
+
+    private CircleImageView imageView;
+    private Uri filePath;
+    private final int PICK_IMAGE_REQUEST = 22;
+
+    DatabaseReference databaseUsers;
+    Boolean hasUserBeenUpdated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +53,22 @@ public class UserProfile extends AppCompatActivity {
 
         //Getting all the users information from the db and email used to login
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
-        user = (User)getIntent().getSerializableExtra("user");
+
+        // getting data from shared preferences
+        SharedPreferences sp = getSharedPreferences("userObject", MODE_PRIVATE);
+        userString = sp.getString("user", "");
+        Gson gson = new Gson();
+        user = gson.fromJson(userString, User.class);
+
         String fullNameText = user.getUserFullName();
         String userNameText = user.getUsername();
-        String userRatingText = String.valueOf(user.getUserRating());
+        String numberOfRatings = String.valueOf(user.getUserNumberOfReviews());
         String numberOfEndorsementsText = String.valueOf(user.getUserNumberOfEndorsements());
         String emailText = user.getEmail();
         String majorText = user.getUserMajor();
         String interestsText = user.getInterests();
 
+        imageView = findViewById(R.id.profilePicture);
 
         fullName = findViewById(R.id.userFullNameTitle);
         username = findViewById(R.id.userNameTitle);
@@ -65,7 +84,7 @@ public class UserProfile extends AppCompatActivity {
         //Populating all of the information onto the layout
         fullName.setText(fullNameText);
         username.setText(userNameText);
-        userRating.setText(userRatingText);
+        userRating.setText(numberOfRatings);
         numberOfEndorsements.setText(numberOfEndorsementsText);
         fullNameField.setText(fullNameText);
         emailField.setText(emailText);
@@ -79,8 +98,7 @@ public class UserProfile extends AppCompatActivity {
                 String emailUpdate = emailField.getText().toString().trim();
                 String majorUpdate = majorField.getText().toString().trim();
                 String interestsUpdate = interestsField.getText().toString().trim();
-                updateUser(user.getId(), user.getUsername(), emailUpdate, fullNameUpdate, majorUpdate, user.getPassword(), user.getUserRating(), user.getUserNumberOfReviews(), user.getUserNumberOfEndorsements(), interestsUpdate );
-
+                updateUser(user.getId(), user.getUsername(), emailUpdate, fullNameUpdate, majorUpdate, user.getPassword(), user.getUserRating(), user.getUserNumberOfReviews(), user.getUserNumberOfEndorsements(), interestsUpdate);
             }
         });
 
@@ -98,6 +116,16 @@ public class UserProfile extends AppCompatActivity {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users").child(id);
         User user = new User(id, username, email , userFullName , userMajor , password, userRating, userNumberOfReviews , userNumberOfEndorsements, interests);
         databaseReference.setValue(user);
+        hasUserBeenUpdated = true;
+
+        // update user in shared prefs
+        SharedPreferences mPrefs = getSharedPreferences("userObject", MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(user);
+        prefsEditor.putString("user", json);
+        prefsEditor.apply();
+
         Toast.makeText(this, "User Updated", Toast.LENGTH_LONG).show();
         return true;
     }
