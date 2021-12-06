@@ -41,6 +41,7 @@
     <string name="databaseSampleButton">Add School</string>
     <string name="school_name">Enter School Name</string>
     <string name="school_province">Select Province</string>
+    <string name="userOverview">Profile Overview</string>
     <string name="school_city">Enter City</string>
     <string-array name="provinces">
         string.

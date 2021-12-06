@@ -2,11 +2,13 @@ package com.example.ratemycourse;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -61,6 +63,17 @@ public class RatingList extends ArrayAdapter<Rating> {
         String user = context.getString(R.string.user);
 
         username.setText(user + " " + rating.getUsername());
+
+        Button userOverview = (Button) listViewItem.findViewById(R.id.userOverview);
+
+        userOverview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, UserOverview.class);
+                intent.putExtra("usernameOverview", rating.getUsername());
+                context.startActivity(intent);
+            }
+        });
 
         endorseButton.setOnClickListener(new View.OnClickListener() {
             @Override

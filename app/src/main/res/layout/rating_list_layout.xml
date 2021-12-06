@@ -136,4 +136,13 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/userOverview"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10dp"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:text="@string/userOverview" />
+
 </LinearLayout>

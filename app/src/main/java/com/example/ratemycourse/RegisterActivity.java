@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(!TextUtils.isEmpty(username) && !TextUtils.isEmpty(fullName) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(major) && !TextUtils.isEmpty(password) ){
             String id = databaseUsers.push().getKey();
-            User user = new User(id, username, email, fullName, major , password, 0, 0, 0, null, "");
+            User user = new User(id, username, email, fullName, major , password, 0, 0, 0, "");
 
             // store user in shared preferences as JSON
             SharedPreferences mPrefs = getSharedPreferences("userObject", MODE_PRIVATE);
