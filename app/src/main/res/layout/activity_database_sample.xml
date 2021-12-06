@@ -10,7 +10,6 @@
 
 
     <TextView
-        android:background="@drawable/button_color"
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,8 +27,8 @@
 
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/editTextName"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/school_name"
@@ -40,12 +39,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/provinces"
-        android:textColor="@color/white"
-        />
+        android:textColor="@color/white" />
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/editTextCity"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/school_city"
@@ -60,16 +58,16 @@
         android:textColorHint="@color/white"/>
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/editTextAddress"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/school_address"
         android:textColorHint="@color/white"/>
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/editTextPhone"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/school_phone"
@@ -77,8 +75,8 @@
         android:textColorHint="@color/white"/>
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/editTextPostalCode"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/school_postal_code"
@@ -86,13 +84,12 @@
         android:textColorHint="@color/white"/>
 
     <Button
-        android:background="@drawable/roundbutton"
-        android:textStyle="bold"
         android:id="@+id/buttonAddSchool"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/databaseSampleButton"
-        />
+        android:textStyle="bold"
+        android:background="@drawable/launch_button" />
 
     <ListView
         android:id="@+id/listViewSchools"

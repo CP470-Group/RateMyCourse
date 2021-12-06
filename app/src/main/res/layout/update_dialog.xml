@@ -7,8 +7,8 @@
     android:background="@drawable/back_round">
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/updateSchoolName"
+        android:textStyle="bold"
         android:hint="@string/school_name"
         android:textColorHint="@color/white"
         android:layout_width="match_parent"
@@ -29,16 +29,16 @@
         android:textColorHint="@color/white"/>
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/updateSchoolEmail"
+        android:textStyle="bold"
         android:hint="@string/school_email"
         android:textColorHint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/updateSchoolAddress"
+        android:textStyle="bold"
         android:hint="@string/school_address"
         android:textColorHint="@color/white"
         android:layout_width="match_parent"
@@ -46,16 +46,16 @@
 
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/updateSchoolPhone"
+        android:textStyle="bold"
         android:hint="@string/school_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorHint="@color/white"/>
 
     <EditText
-        android:textStyle="bold"
         android:id="@+id/updateSchoolPostalCode"
+        android:textStyle="bold"
         android:hint="@string/school_postal_code"
         android:textColorHint="@color/white"
         android:layout_width="match_parent"

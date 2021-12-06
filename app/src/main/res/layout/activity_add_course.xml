@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -32,63 +32,59 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/add_course"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_below="@id/buttonAddCourse"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
             <EditText
-                android:textStyle="bold"
                 android:id="@+id/editTextCourseName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:hint="@string/course_name"
                 android:textColorHint="@color/white"/>
 
             <EditText
-                android:textStyle="bold"
                 android:id="@+id/editTextCourseInstructor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:hint="@string/course_current_instructor"
                 android:textColorHint="@color/white"/>
 
             <EditText
-
-                android:textStyle="bold"
                 android:id="@+id/editTextCourseDepartment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:hint="@string/course_department"
                 android:textColorHint="@color/white"/>
 
             <EditText
-
-                android:textStyle="bold"
                 android:id="@+id/editTextCourseYear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:hint="@string/course_year"
                 android:textColorHint="@color/white"/>
 
             <Button
-                android:background="@drawable/roundbutton"
                 android:id="@+id/buttonAddCourse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/launch_button"
                 android:text="@string/add_course"/>
 
             <TextView
-                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/courses"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:layout_below="@id/buttonAddCourse"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
@@ -96,9 +92,6 @@
                 android:id="@+id/listViewCourses"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
         </LinearLayout>
-
     </ScrollView>
-
 </RelativeLayout>

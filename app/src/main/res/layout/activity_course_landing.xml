@@ -19,7 +19,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
@@ -85,13 +85,12 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:background="@drawable/roundbutton"
                     android:id="@+id/newRev"
+                    android:background="@drawable/launch_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-
                     android:text="@string/Create_new_review" />
 
                 <TextView

@@ -15,7 +15,6 @@
         android:background="@drawable/back_round">
 
         <TextView
-            android:background="@drawable/button_color"
             android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,10 +44,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:textColor="@color/white"
                 android:id="@+id/fullNameField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_marginTop="0dp"
                 android:importantForAutofill="no"
                 android:inputType="text"
@@ -57,8 +56,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:textStyle="bold"
                 android:id="@+id/userNameTitleForReg"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -70,8 +69,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:textColor="@color/white"
                 android:id="@+id/userNameField"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
@@ -82,9 +81,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/emailTitleForReg"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:id="@+id/emailTitleForReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp"
@@ -96,8 +95,8 @@
                 />
 
             <EditText
-                android:textColor="@color/white"
                 android:id="@+id/emailField"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
@@ -108,9 +107,9 @@
                 app:layout_constraintTop_toTopOf="@id/passwordTitleForReg" />
 
             <TextView
+                android:id="@+id/majorTitleForReg"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:id="@+id/majorTitleForReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp"
@@ -119,9 +118,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/majorField" />
 
             <EditText
-
-                android:textColor="@color/white"
                 android:id="@+id/majorField"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
@@ -132,9 +130,9 @@
                 app:layout_constraintTop_toTopOf="@id/passwordTitleForReg" />
 
             <TextView
+                android:id="@+id/passwordTitleForReg"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:id="@+id/passwordTitleForReg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="21dp"
@@ -143,8 +141,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/passwordField" />
 
             <EditText
-                android:textColor="@color/white"
                 android:id="@+id/passwordField"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
@@ -153,8 +151,8 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:background="@drawable/roundbutton"
                 android:id="@+id/signUpPageButton"
+                android:background="@drawable/roundbutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="0dp"

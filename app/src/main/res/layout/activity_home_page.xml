@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/back_round"
     tools:context=".HomePage">
 
@@ -46,18 +45,6 @@
             android:drawableLeft="@drawable/school"
             android:text="@string/homePageSearchSchool" />
 
-        <!--
-                <Button
-                    android:id="@+id/addRatingButton"
-                    android:layout_width="350dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:background="@drawable/launch_button"
-                    android:drawableLeft="@drawable/rating_icon"
-                    android:text="@string/homePageAddRating" />
-        -->
-
         <Button
             android:id="@+id/editProfileButton"
             android:layout_width="350dp"
@@ -90,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/back_round"
+            android:background="#4B6C8D"
             app:menu="@menu/bottom_nav_menu" />
     </RelativeLayout>
 

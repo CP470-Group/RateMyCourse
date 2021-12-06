@@ -17,7 +17,6 @@ public class HomePage extends AppCompatActivity {
     //Class variables
     Button schoolSearch;
     Button profileButton;
-    Button reviewButton;
     Button databaseSample;
     BottomNavigationView bottomNav;
 
