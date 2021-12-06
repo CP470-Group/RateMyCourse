@@ -18,19 +18,20 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.1"
             android:text="@string/rating"
             android:textColor="@color/white"/>
 
-        <TextView
+        <RatingBar
             android:id="@+id/textCourseRating"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:text="TextView"
-            android:textColor="@color/white"/>
+            android:layout_marginRight="150dp"
+            android:layout_gravity="left"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:numStars="5" />
 
     </LinearLayout>
 

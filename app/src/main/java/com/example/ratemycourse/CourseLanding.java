@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,7 +33,6 @@ public class CourseLanding extends AppCompatActivity {
 
     // rating variables used for overall course rating
     float overall = 0;
-    private int courseRatings;
 
     public static final String COURSE_ID = "courseID";
     public static final String COURSE_NAME_RATING = "courseNameRate";
@@ -45,6 +45,11 @@ public class CourseLanding extends AppCompatActivity {
     private List<Rating> ratings;
 
     private String courseID;
+    private String schoolID;
+    private String name;
+    private String prof;
+    private String dept;
+    private String year;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +70,11 @@ public class CourseLanding extends AppCompatActivity {
         Intent intent = getIntent();
 
         courseID = intent.getStringExtra(AddCourseActivity.COURSE_ID);
-        String name = intent.getStringExtra(AddCourseActivity.COURSE_NAME);
-        String prof = intent.getStringExtra(AddCourseActivity.COURSE_INSTRUCTOR);
-        String dept = intent.getStringExtra(AddCourseActivity.COURSE_DEPT);
-        String year = intent.getStringExtra(AddCourseActivity.COURSE_YEAR);
+        schoolID = intent.getStringExtra(AddCourseActivity.SCHOOL_ID);
+        name = intent.getStringExtra(AddCourseActivity.COURSE_NAME);
+        prof = intent.getStringExtra(AddCourseActivity.COURSE_INSTRUCTOR);
+        dept = intent.getStringExtra(AddCourseActivity.COURSE_DEPT);
+        year = intent.getStringExtra(AddCourseActivity.COURSE_YEAR);
         String school = intent.getStringExtra(AddCourseActivity.SCHOOL_NAME);
 
         courseTitle.setText(name);
@@ -101,6 +107,7 @@ public class CourseLanding extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ratings.clear();
+                int courseRatings = 0;
                 for (DataSnapshot ratingSnapshot: dataSnapshot.getChildren()) {
                     Rating rating = ratingSnapshot.getValue(Rating.class);
                     if (rating.getCourseID().equals(courseID)) {
@@ -114,11 +121,22 @@ public class CourseLanding extends AppCompatActivity {
                     overall = courseRatings / ratings.size();
                 }
                 courseRating.setRating(overall);
+
+                // update course overall rating
+                updateCourseRating(courseID, name, (int) overall, prof, dept, year);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+    }
+
+    public boolean updateCourseRating(String courseID, String name, int newRating, String prof, String dept, String year) {
+        DatabaseReference databaseCourse = FirebaseDatabase.getInstance().getReference("courses").child(schoolID).child(courseID);
+        Course updatedCourse = new Course(courseID, name, newRating, prof, dept, year);
+        databaseCourse.setValue(updatedCourse);
+        return true;
     }
 }

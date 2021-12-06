@@ -64,8 +64,6 @@ public class DatabaseSample extends AppCompatActivity {
 
         schoolList = new ArrayList<>();
 
-        listViewSchools = (ListView) findViewById(R.id.listViewSchools);
-
         buttonAddSchool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,47 +71,47 @@ public class DatabaseSample extends AppCompatActivity {
             }
         });
 
-        listViewSchools.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                School school = schoolList.get(i);
-                Intent intent = new Intent(getApplicationContext(), AddCourseActivity.class);
-                intent.putExtra(SCHOOL_ID, school.getSchoolID());
-                intent.putExtra(SCHOOL_NAME, school.getSchoolName());
-                startActivity(intent);
-            }
-        });
+//        listViewSchools.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                School school = schoolList.get(i);
+//                Intent intent = new Intent(getApplicationContext(), AddCourseActivity.class);
+//                intent.putExtra(SCHOOL_ID, school.getSchoolID());
+//                intent.putExtra(SCHOOL_NAME, school.getSchoolName());
+//                startActivity(intent);
+//            }
+//        });
 
-        listViewSchools.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                School school = schoolList.get(i);
-                showUpdateDialog(school.getSchoolID(), school.getSchoolName() );
-                return true;
-            }
-        });
+//        listViewSchools.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                School school = schoolList.get(i);
+//                showUpdateDialog(school.getSchoolID(), school.getSchoolName() );
+//                return true;
+//            }
+//        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        databaseSchools.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                schoolList.clear();
-                for (DataSnapshot schoolSnapshot: dataSnapshot.getChildren()) {
-                    School school = schoolSnapshot.getValue(School.class);
-                    schoolList.add(school);
-                }
-                SchoolList adapter = new SchoolList(DatabaseSample.this, schoolList);
-                listViewSchools.setAdapter(adapter);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        databaseSchools.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                schoolList.clear();
+//                for (DataSnapshot schoolSnapshot: dataSnapshot.getChildren()) {
+//                    School school = schoolSnapshot.getValue(School.class);
+//                    schoolList.add(school);
+//                }
+//                SchoolList adapter = new SchoolList(DatabaseSample.this, schoolList);
+//                listViewSchools.setAdapter(adapter);
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
     }
 
     private void addSchool() {

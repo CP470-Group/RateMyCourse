@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -31,7 +32,7 @@ public class CourseList extends ArrayAdapter<Course> {
         View listViewItem = inflater.inflate(R.layout.list_layout_two, null, true);
 
         TextView textViewCourseName = (TextView) listViewItem.findViewById(R.id.textViewCourseName);
-        TextView textCourseRating = (TextView) listViewItem.findViewById(R.id.textCourseRating);
+        RatingBar textCourseRating = (RatingBar) listViewItem.findViewById(R.id.textCourseRating);
         TextView textCourseCurrentInstructor = (TextView) listViewItem.findViewById(R.id.textCourseCurrentInstructor);
         TextView textCourseDepartment = (TextView) listViewItem.findViewById(R.id.textCourseDepartment);
         TextView textCourseYear = (TextView) listViewItem.findViewById(R.id.textCourseYear);
@@ -39,7 +40,7 @@ public class CourseList extends ArrayAdapter<Course> {
         Course course = courseList.get(position);
 
         textViewCourseName.setText(course.getCourseName());
-        textCourseRating.setText(String.valueOf(course.getCourseRating()));
+        textCourseRating.setRating(course.getCourseRating());
         textCourseCurrentInstructor.setText(course.getCurrentInstructor());
         textCourseDepartment.setText(course.getCourseDepartment());
         textCourseYear.setText(course.getCourseYear());

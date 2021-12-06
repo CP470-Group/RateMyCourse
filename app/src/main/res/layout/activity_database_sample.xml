@@ -91,10 +91,4 @@
         android:textStyle="bold"
         android:background="@drawable/launch_button" />
 
-    <ListView
-        android:id="@+id/listViewSchools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColorHint="@color/white"/>
-
 </LinearLayout>

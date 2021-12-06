@@ -10,12 +10,10 @@
     tools:context=".CourseLanding">
 
     <ScrollView
-        android:id="@+id/SCROLLER_ID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:scrollbars="vertical"
-        tools:ignore="MissingConstraints">
+        android:scrollbars="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,7 +27,7 @@
                     android:fontFamily="sans-serif-black"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:typeface="sans"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +40,7 @@
                     android:text="@string/Course_title"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <RatingBar
@@ -61,7 +59,7 @@
                     android:text="@string/Course_title"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -71,7 +69,7 @@
                     android:text="@string/Course_title"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -81,7 +79,7 @@
                     android:text="@string/Course_title"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <Button
@@ -89,19 +87,21 @@
                     android:background="@drawable/launch_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_gravity="center"
-                    android:layout_margin="20dp"
+                    android:textColor="@color/white"
+                    style="@style/Widget.AppCompat.Button.Small"
                     android:text="@string/Create_new_review" />
 
                 <TextView
                     android:id="@+id/student_reviews"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
                     android:text="@string/Reviews"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="30dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
                 <ListView

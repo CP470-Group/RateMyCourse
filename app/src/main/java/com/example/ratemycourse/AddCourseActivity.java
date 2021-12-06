@@ -26,6 +26,7 @@ import java.util.List;
 public class AddCourseActivity extends AppCompatActivity {
 
     public static final String COURSE_ID = "courseID";
+    public static final String SCHOOL_ID = "schoolID";
     public static final String COURSE_NAME = "courseName";
     public static final String COURSE_RATING = "courseRating";
     public static final String COURSE_INSTRUCTOR = "currentInstructor";
@@ -85,6 +86,7 @@ public class AddCourseActivity extends AppCompatActivity {
                 Course course = courseList.get(i);
                 Intent intent = new Intent(getApplicationContext(), CourseLanding.class);
                 intent.putExtra(COURSE_ID, course.getCourseID());
+                intent.putExtra(SCHOOL_ID, id);
                 intent.putExtra(COURSE_NAME, course.getCourseName());
                 intent.putExtra(COURSE_RATING, Integer.toString(course.getCourseRating()));
                 intent.putExtra(COURSE_INSTRUCTOR, course.getCurrentInstructor());
