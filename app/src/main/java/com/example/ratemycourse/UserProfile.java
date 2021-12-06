@@ -3,15 +3,9 @@ package com.example.ratemycourse;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
@@ -37,11 +31,9 @@ public class UserProfile extends AppCompatActivity {
     User user;
 
     // variables for shared preferences
-    private String userString;
+    String userString;
 
-    private CircleImageView imageView;
-    private Uri filePath;
-    private final int PICK_IMAGE_REQUEST = 22;
+    CircleImageView imageView;
 
     DatabaseReference databaseUsers;
     Boolean hasUserBeenUpdated;
@@ -102,6 +94,7 @@ public class UserProfile extends AppCompatActivity {
             }
         });
 
+        //Delete the user from the database
         deleteProfileButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

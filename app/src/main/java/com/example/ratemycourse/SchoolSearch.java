@@ -10,9 +10,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -27,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 //This activity is where the user is going to search for the school they want to find a course for
 public class SchoolSearch extends AppCompatActivity {
@@ -51,8 +48,8 @@ public class SchoolSearch extends AppCompatActivity {
         databaseSchools = FirebaseDatabase.getInstance().getReference("schools");
 
         //Find the views by there ids
-        searchView = (SearchView) findViewById(R.id.searchSchools);
-        listViewSchools = (ListView) findViewById(R.id.listOfSchools);
+        searchView = findViewById(R.id.searchSchools);
+        listViewSchools = findViewById(R.id.listOfSchools);
 
         schoolList = new ArrayList<>();
 
@@ -143,16 +140,16 @@ public class SchoolSearch extends AppCompatActivity {
         // set view for dialog builder as the inflated view
         dialogBuilder.setView(dialogView);
 
-        final EditText updateSchoolName = (EditText) dialogView.findViewById(R.id.updateSchoolName);
-        final Spinner updateSpinner = (Spinner) dialogView.findViewById(R.id.updateSpinnerSchool);
-        final EditText updateSchoolCity = (EditText) dialogView.findViewById(R.id.updateSchoolCity);
-        final EditText updateSchoolEmail = (EditText) dialogView.findViewById(R.id.updateSchoolEmail);
-        final EditText updateSchoolAddress = (EditText) dialogView.findViewById(R.id.updateSchoolAddress);
-        final EditText updateSchoolPhone = (EditText) dialogView.findViewById(R.id.updateSchoolPhone);
-        final EditText updateSchoolPostalCode = (EditText) dialogView.findViewById(R.id.updateSchoolPostalCode);
+        final EditText updateSchoolName = dialogView.findViewById(R.id.updateSchoolName);
+        final Spinner updateSpinner = dialogView.findViewById(R.id.updateSpinnerSchool);
+        final EditText updateSchoolCity = dialogView.findViewById(R.id.updateSchoolCity);
+        final EditText updateSchoolEmail = dialogView.findViewById(R.id.updateSchoolEmail);
+        final EditText updateSchoolAddress = dialogView.findViewById(R.id.updateSchoolAddress);
+        final EditText updateSchoolPhone = dialogView.findViewById(R.id.updateSchoolPhone);
+        final EditText updateSchoolPostalCode = dialogView.findViewById(R.id.updateSchoolPostalCode);
 
-        final Button updateButton = (Button) dialogView.findViewById(R.id.buttonUpdateSchool);
-        final Button deleteButton = (Button) dialogView.findViewById(R.id.buttonDelete);
+        final Button updateButton = dialogView.findViewById(R.id.buttonUpdateSchool);
+        final Button deleteButton = dialogView.findViewById(R.id.buttonDelete);
 
         dialogBuilder.setTitle("Updating School: " + schoolName);
 

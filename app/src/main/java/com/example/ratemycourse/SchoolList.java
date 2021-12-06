@@ -30,13 +30,13 @@ public class SchoolList extends ArrayAdapter<School> {
 
         View listViewItem = inflater.inflate(R.layout.list_layout, null, true);
 
-        TextView textViewSchoolName = (TextView) listViewItem.findViewById(R.id.textViewSchoolName);
-        TextView textViewSchoolProvince = (TextView) listViewItem.findViewById(R.id.textViewSchoolProvince);
-        TextView textViewSchoolCity = (TextView) listViewItem.findViewById(R.id.textViewSchoolCity);
-        TextView textViewSchoolEmail = (TextView) listViewItem.findViewById(R.id.textViewSchoolEmail);
-        TextView textViewSchoolAddress = (TextView) listViewItem.findViewById(R.id.textViewSchoolAddress);
-        TextView textViewSchoolPhone = (TextView) listViewItem.findViewById(R.id.textViewSchoolPhone);
-        TextView textViewSchoolPostalCode = (TextView) listViewItem.findViewById(R.id.textViewSchoolPostalCode);
+        TextView textViewSchoolName = listViewItem.findViewById(R.id.textViewSchoolName);
+        TextView textViewSchoolProvince = listViewItem.findViewById(R.id.textViewSchoolProvince);
+        TextView textViewSchoolCity = listViewItem.findViewById(R.id.textViewSchoolCity);
+        TextView textViewSchoolEmail = listViewItem.findViewById(R.id.textViewSchoolEmail);
+        TextView textViewSchoolAddress = listViewItem.findViewById(R.id.textViewSchoolAddress);
+        TextView textViewSchoolPhone = listViewItem.findViewById(R.id.textViewSchoolPhone);
+        TextView textViewSchoolPostalCode = listViewItem.findViewById(R.id.textViewSchoolPostalCode);
 
         School school = schoolList.get(position);
 

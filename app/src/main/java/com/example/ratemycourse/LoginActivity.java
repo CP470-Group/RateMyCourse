@@ -21,7 +21,6 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
-    static LoginActivity instance;
 
     Button loginPageButton;
     EditText emailText;
@@ -38,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //Getting the users database instance
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
 
         loginPageButton = findViewById(R.id.loginPageButton);

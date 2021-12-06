@@ -51,14 +51,6 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
-//        reviewButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(HomePage.this, NewRating.class);
-//                startActivity(intent);
-//            }
-//        });
-
         databaseSample.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

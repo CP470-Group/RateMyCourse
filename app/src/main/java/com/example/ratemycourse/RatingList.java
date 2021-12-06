@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,13 +44,13 @@ public class RatingList extends ArrayAdapter<Rating> {
 
         View listViewItem = inflater.inflate(R.layout.rating_list_layout, null, true);
 
-        TextView prof = (TextView) listViewItem.findViewById(R.id.prof);
-        RatingBar rate = (RatingBar) listViewItem.findViewById(R.id.rate);
-        TextView grade = (TextView) listViewItem.findViewById(R.id.grade);
-        TextView ratingText = (TextView) listViewItem.findViewById(R.id.rating);
-        TextView username = (TextView) listViewItem.findViewById(R.id.username);
+        TextView prof = listViewItem.findViewById(R.id.prof);
+        RatingBar rate = listViewItem.findViewById(R.id.rate);
+        TextView grade = listViewItem.findViewById(R.id.grade);
+        TextView ratingText = listViewItem.findViewById(R.id.rating);
+        TextView username = listViewItem.findViewById(R.id.username);
 
-        ImageButton endorseButton = (ImageButton) listViewItem.findViewById(R.id.endorseButton);
+        ImageButton endorseButton = listViewItem.findViewById(R.id.endorseButton);
 
         Rating rating = ratingList.get(position);
 
@@ -64,7 +63,7 @@ public class RatingList extends ArrayAdapter<Rating> {
 
         username.setText(user + " " + rating.getUsername());
 
-        Button userOverview = (Button) listViewItem.findViewById(R.id.userOverview);
+        Button userOverview = listViewItem.findViewById(R.id.userOverview);
 
         userOverview.setOnClickListener(new View.OnClickListener() {
             @Override
