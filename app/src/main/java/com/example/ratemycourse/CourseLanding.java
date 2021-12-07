@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +25,6 @@ public class CourseLanding extends AppCompatActivity {
     private Button new_review;
     private TextView courseTitle;
     private RatingBar courseRating;
-    private TextView courseInstructor;
     private TextView courseDept;
     private TextView courseYear;
     private TextView schoolName;
@@ -58,14 +56,13 @@ public class CourseLanding extends AppCompatActivity {
 
         databaseRatings = FirebaseDatabase.getInstance().getReference("ratings");
 
-        new_review = (Button) findViewById(R.id.newRev);
+        new_review = findViewById(R.id.newRev);
 
-        courseTitle = (TextView) findViewById(R.id.courseTitle);
-        courseRating = (RatingBar) findViewById(R.id.courseRating);
-        courseInstructor = (TextView) findViewById(R.id.courseInstructor);
-        courseDept = (TextView) findViewById(R.id.courseDept);
-        courseYear = (TextView) findViewById(R.id.courseYear);
-        schoolName = (TextView) findViewById(R.id.schoolName);
+        courseTitle = findViewById(R.id.courseTitle);
+        courseRating = findViewById(R.id.courseRating);
+        courseDept = findViewById(R.id.courseDept);
+        courseYear = findViewById(R.id.courseYear);
+        schoolName = findViewById(R.id.schoolName);
 
         Intent intent = getIntent();
 
@@ -78,12 +75,11 @@ public class CourseLanding extends AppCompatActivity {
         String school = intent.getStringExtra(AddCourseActivity.SCHOOL_NAME);
 
         courseTitle.setText(name);
-        courseInstructor.setText(prof);
         courseDept.setText(dept);
         courseYear.setText(year);
         schoolName.setText(school);
 
-        listReviews = (ListView) findViewById(R.id.listReviews);
+        listReviews = findViewById(R.id.listReviews);
         ratings = new ArrayList<>();
 
         new_review.setOnClickListener(new View.OnClickListener() {

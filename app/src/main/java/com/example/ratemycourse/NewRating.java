@@ -48,10 +48,6 @@ public class NewRating extends AppCompatActivity {
 
     User user;
 
-    public static final String COURSE_ID = "courseID";
-    public static final String COURSE_NAME = "courseNameRate";
-    public static final String SCHOOL_NAME = "schoolNameRate";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,16 +56,16 @@ public class NewRating extends AppCompatActivity {
         databaseRatings = FirebaseDatabase.getInstance().getReference("ratings");
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
 
-        courseNameRate = (TextView) findViewById(R.id.courseNameRate);
-        schoolNameRate = (TextView) findViewById(R.id.schoolNameRate);
+        courseNameRate = findViewById(R.id.courseNameRate);
+        schoolNameRate = findViewById(R.id.schoolNameRate);
 
         // initialize rating input fields
-        spinnerGrades = (Spinner) findViewById(R.id.spinnerGrades);
-        rateBar = (RatingBar) findViewById(R.id.rateBar);
-        profName = (EditText) findViewById(R.id.profName);
-        ratingText = (EditText) findViewById(R.id.ratingText);
+        spinnerGrades = findViewById(R.id.spinnerGrades);
+        rateBar = findViewById(R.id.rateBar);
+        profName = findViewById(R.id.profName);
+        ratingText = findViewById(R.id.ratingText);
 
-        submitRating = (Button) findViewById(R.id.submitRating);
+        submitRating = findViewById(R.id.submitRating);
 
         Intent intent = getIntent();
 

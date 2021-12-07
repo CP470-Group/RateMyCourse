@@ -53,16 +53,6 @@
                     android:text="TextView" />
 
                 <TextView
-                    android:id="@+id/courseInstructor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Course_title"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <TextView
                     android:id="@+id/courseDept"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

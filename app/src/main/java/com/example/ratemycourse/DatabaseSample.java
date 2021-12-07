@@ -1,26 +1,25 @@
 package com.example.ratemycourse;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
+
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,8 +42,6 @@ public class DatabaseSample extends AppCompatActivity {
 
     DatabaseReference databaseSchools;
 
-    ListView listViewSchools;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,15 +49,15 @@ public class DatabaseSample extends AppCompatActivity {
 
         databaseSchools = FirebaseDatabase.getInstance().getReference("schools");
 
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        spinnerProvinces = (Spinner) findViewById(R.id.spinnerProvinces);
-        editTextCity = (EditText) findViewById(R.id.editTextCity);
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextAddress = (EditText) findViewById(R.id.editTextAddress);
-        editTextPhone = (EditText) findViewById(R.id.editTextPhone);
-        editTextPostalCode = (EditText) findViewById(R.id.editTextPostalCode);
+        editTextName = findViewById(R.id.editTextName);
+        spinnerProvinces = findViewById(R.id.spinnerProvinces);
+        editTextCity = findViewById(R.id.editTextCity);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextAddress = findViewById(R.id.editTextAddress);
+        editTextPhone = findViewById(R.id.editTextPhone);
+        editTextPostalCode = findViewById(R.id.editTextPostalCode);
 
-        buttonAddSchool = (Button) findViewById(R.id.buttonAddSchool);
+        buttonAddSchool = findViewById(R.id.buttonAddSchool);
 
         schoolList = new ArrayList<>();
 
@@ -71,47 +68,12 @@ public class DatabaseSample extends AppCompatActivity {
             }
         });
 
-//        listViewSchools.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                School school = schoolList.get(i);
-//                Intent intent = new Intent(getApplicationContext(), AddCourseActivity.class);
-//                intent.putExtra(SCHOOL_ID, school.getSchoolID());
-//                intent.putExtra(SCHOOL_NAME, school.getSchoolName());
-//                startActivity(intent);
-//            }
-//        });
-
-//        listViewSchools.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                School school = schoolList.get(i);
-//                showUpdateDialog(school.getSchoolID(), school.getSchoolName() );
-//                return true;
-//            }
-//        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-//        databaseSchools.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                schoolList.clear();
-//                for (DataSnapshot schoolSnapshot: dataSnapshot.getChildren()) {
-//                    School school = schoolSnapshot.getValue(School.class);
-//                    schoolList.add(school);
-//                }
-//                SchoolList adapter = new SchoolList(DatabaseSample.this, schoolList);
-//                listViewSchools.setAdapter(adapter);
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
     }
 
     private void addSchool() {
@@ -151,16 +113,16 @@ public class DatabaseSample extends AppCompatActivity {
         // set view for dialog builder as the inflated view
         dialogBuilder.setView(dialogView);
 
-        final EditText updateSchoolName = (EditText) dialogView.findViewById(R.id.updateSchoolName);
-        final Spinner updateSpinner = (Spinner) dialogView.findViewById(R.id.updateSpinnerSchool);
-        final EditText updateSchoolCity = (EditText) dialogView.findViewById(R.id.updateSchoolCity);
-        final EditText updateSchoolEmail = (EditText) dialogView.findViewById(R.id.updateSchoolEmail);
-        final EditText updateSchoolAddress = (EditText) dialogView.findViewById(R.id.updateSchoolAddress);
-        final EditText updateSchoolPhone = (EditText) dialogView.findViewById(R.id.updateSchoolPhone);
-        final EditText updateSchoolPostalCode = (EditText) dialogView.findViewById(R.id.updateSchoolPostalCode);
+        final EditText updateSchoolName = dialogView.findViewById(R.id.updateSchoolName);
+        final Spinner updateSpinner = dialogView.findViewById(R.id.updateSpinnerSchool);
+        final EditText updateSchoolCity = dialogView.findViewById(R.id.updateSchoolCity);
+        final EditText updateSchoolEmail = dialogView.findViewById(R.id.updateSchoolEmail);
+        final EditText updateSchoolAddress = dialogView.findViewById(R.id.updateSchoolAddress);
+        final EditText updateSchoolPhone = dialogView.findViewById(R.id.updateSchoolPhone);
+        final EditText updateSchoolPostalCode = dialogView.findViewById(R.id.updateSchoolPostalCode);
 
-        final Button updateButton = (Button) dialogView.findViewById(R.id.buttonUpdateSchool);
-        final Button deleteButton = (Button) dialogView.findViewById(R.id.buttonDelete);
+        final Button updateButton = dialogView.findViewById(R.id.buttonUpdateSchool);
+        final Button deleteButton = dialogView.findViewById(R.id.buttonDelete);
 
         dialogBuilder.setTitle("Updating School: " + schoolName);
 

@@ -25,6 +25,7 @@ import java.util.List;
 
 public class AddCourseActivity extends AppCompatActivity {
 
+    //Class constants
     public static final String COURSE_ID = "courseID";
     public static final String SCHOOL_ID = "schoolID";
     public static final String COURSE_NAME = "courseName";
@@ -33,6 +34,7 @@ public class AddCourseActivity extends AppCompatActivity {
     public static final String COURSE_DEPT = "courseDepartment";
     public static final String COURSE_YEAR = "courseYear";
     public static final String SCHOOL_NAME = "schoolName";
+    public static final int DEFAULT_RATING = 0; // default rating for courses
 
     TextView textViewSchoolName;
     EditText editTextCourseName;
@@ -46,22 +48,19 @@ public class AddCourseActivity extends AppCompatActivity {
 
     DatabaseReference databaseCourses;
 
-    // default rating for courses
-    private int rating = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_course);
 
-        textViewSchoolName = (TextView) findViewById(R.id.textViewSchoolName);
-        editTextCourseName = (EditText) findViewById(R.id.editTextCourseName);
-        editTextCourseInstructor = (EditText) findViewById(R.id.editTextCourseInstructor);
-        editTextCourseDepartment = (EditText) findViewById(R.id.editTextCourseDepartment);
-        editTextCourseYear = (EditText) findViewById(R.id.editTextCourseYear);
-        buttonAddCourse = (Button) findViewById(R.id.buttonAddCourse);
+        textViewSchoolName = findViewById(R.id.textViewSchoolName);
+        editTextCourseName = findViewById(R.id.editTextCourseName);
+        editTextCourseInstructor = findViewById(R.id.editTextCourseInstructor);
+        editTextCourseDepartment = findViewById(R.id.editTextCourseDepartment);
+        editTextCourseYear = findViewById(R.id.editTextCourseYear);
+        buttonAddCourse = findViewById(R.id.buttonAddCourse);
 
-        listViewCourses = (ListView) findViewById(R.id.listViewCourses);
+        listViewCourses = findViewById(R.id.listViewCourses);
         courseList = new ArrayList<>();
 
         Intent intent = getIntent();
@@ -128,7 +127,7 @@ public class AddCourseActivity extends AppCompatActivity {
 
         if (!TextUtils.isEmpty(courseName)) {
             String id = databaseCourses.push().getKey();
-            Course course = new Course(id, courseName, rating, currentInstructor, department, year);
+            Course course = new Course(id, courseName, DEFAULT_RATING, currentInstructor, department, year);
             databaseCourses.child(id).setValue(course);
             Toast.makeText(this, "Course saved successfully.", Toast.LENGTH_LONG).show();
         } else {
